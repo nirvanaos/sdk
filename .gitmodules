@@ -1,0 +1,6 @@
+[submodule "nirvana/orb"]
+	path = nirvana/orb
+	url = https://github.com/nirvanaos/orb.git
+[submodule "nirvana/library"]
+	path = nirvana/library
+	url = https://github.com/nirvanaos/library.git
