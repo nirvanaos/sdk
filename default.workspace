@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="nirvana/nirvana/nirvana.cbp" />
+		<Project filename="nirvana/TestSTL/TestSTL.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

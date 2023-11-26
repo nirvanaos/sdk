@@ -11,7 +11,7 @@ subdir('library')
 subdir('orb')
 library('nirvana',
 	lib_src,
-#	orb_src,
-# 	lib_idl,
-#	orb_idl,
+	orb_src,
+ 	lib_idl,
+	orb_idl,
   include_directories : inc_dirs)
