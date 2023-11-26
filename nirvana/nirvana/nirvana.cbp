@@ -63,8 +63,7 @@
 		<Unit filename="../library/Include/Nirvana/Legacy/Runnable.idl" />
 		<Unit filename="../library/Include/Nirvana/Memory.h" />
 		<Unit filename="../library/Include/Nirvana/Memory.idl">
-			<Option compile="1" />
-			<Option compiler="clang" use="1" buildCommand="nidl2cpp $file -legacy -no_ami -no_proxy -no_client_cpp" />
+			<Option compiler="clang" use="1" buildCommand="nidl2cpp $file -no_ami -no_proxy -no_client_cpp" />
 		</Unit>
 		<Unit filename="../library/Include/Nirvana/MemoryHelper.h" />
 		<Unit filename="../library/Include/Nirvana/Memory_forward.h" />
@@ -223,7 +222,10 @@
 		<Unit filename="../orb/Include/CORBA/IOP.idl" />
 		<Unit filename="../orb/Include/CORBA/IOP_s.h" />
 		<Unit filename="../orb/Include/CORBA/IORequest.h" />
-		<Unit filename="../orb/Include/CORBA/IORequest.idl" />
+		<Unit filename="../orb/Include/CORBA/IORequest.idl">
+			<Option compile="1" />
+			<Option compiler="clang" use="1" buildCommand="nidl2cpp $file -no_ami -no_proxy -no_client_cpp" />
+		</Unit>
 		<Unit filename="../orb/Include/CORBA/IORequestClient.h" />
 		<Unit filename="../orb/Include/CORBA/IORequest_s.h" />
 		<Unit filename="../orb/Include/CORBA/I_ptr.h" />
