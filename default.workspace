@@ -3,5 +3,6 @@
 	<Workspace title="Workspace">
 		<Project filename="nirvana/nirvana/nirvana.cbp" />
 		<Project filename="nirvana/TestSTL/TestSTL.cbp" />
+		<Project filename="googletest/googletest.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>
