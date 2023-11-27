@@ -2,14 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="..\library\Include\Nirvana\basic_string.h" open="1" top="1" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\orb\Include\CORBA\Policy.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="44586" topLine="1831" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\library\Include\Nirvana\time_defs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\orb\Include\CORBA\CORBA.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1765" topLine="22" />
+			<Cursor1 position="1710" topLine="30" />
 		</Cursor>
 	</File>
 	<File name="..\orb\Include\CORBA\Type_forward.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,44 +17,14 @@
 			<Cursor1 position="5621" topLine="141" />
 		</Cursor>
 	</File>
-	<File name="..\orb\Include\CORBA\Policy.h" open="0" top="0" tabpos="12" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\orb\Include\CORBA\IORequestClient.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1161" topLine="8" />
-		</Cursor>
-	</File>
-	<File name="..\orb\Include\CORBA\DynamicServant_s.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\library\Source\crt_startup.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="966" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\orb\Include\CORBA\ValueImpl.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1077" topLine="21" />
-		</Cursor>
-	</File>
-	<File name="..\orb\Include\CORBA\IORequest.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="18652" topLine="450" />
-		</Cursor>
-	</File>
 	<File name="..\orb\Include\CORBA\AMI.h" open="0" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1226" topLine="52" />
 		</Cursor>
 	</File>
-	<File name="..\orb\Include\CORBA\Messaging.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\library\Include\Nirvana\ImportInterface.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="152" topLine="0" />
+			<Cursor1 position="2669" topLine="66" />
 		</Cursor>
 	</File>
 	<File name="..\orb\Include\CORBA\Sequence.h" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -67,24 +37,14 @@
 			<Cursor1 position="7915" topLine="204" />
 		</Cursor>
 	</File>
-	<File name="..\library\Include\Nirvana\NirvanaBase.h" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\orb\Include\CORBA\DynamicServant_s.h" open="0" top="0" tabpos="14" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2717" topLine="93" />
+			<Cursor1 position="0" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="..\orb\Include\CORBA\CORBA.h" open="0" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\orb\Include\CORBA\DynamicServantImpl.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1710" topLine="30" />
-		</Cursor>
-	</File>
-	<File name="..\library\Source\lpch.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="14" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="..\orb\Include\CORBA\IORequest.idl" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1996" topLine="21" />
+			<Cursor1 position="1083" topLine="9" />
 		</Cursor>
 	</File>
 	<File name="..\orb\Include\CORBA\ValueBaseImpl.h" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -92,14 +52,54 @@
 			<Cursor1 position="1370" topLine="19" />
 		</Cursor>
 	</File>
+	<File name="..\orb\Include\CORBA\Messaging.h" open="0" top="0" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="152" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\orb\Include\CORBA\ValueImpl.h" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1077" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="..\library\Include\Nirvana\time_defs.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1765" topLine="22" />
+		</Cursor>
+	</File>
 	<File name="..\library\Include\Nirvana\Nirvana.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="978" topLine="2" />
 		</Cursor>
 	</File>
-	<File name="..\library\Include\Nirvana\ImportInterface.h" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\library\Include\Nirvana\basic_string.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2669" topLine="66" />
+			<Cursor1 position="45871" topLine="1880" />
+		</Cursor>
+	</File>
+	<File name="..\orb\Include\CORBA\IORequest.idl" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1996" topLine="21" />
+		</Cursor>
+	</File>
+	<File name="..\orb\Include\CORBA\IORequestClient.h" open="0" top="0" tabpos="13" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1161" topLine="8" />
+		</Cursor>
+	</File>
+	<File name="..\library\Source\crt_startup.cpp" open="0" top="0" tabpos="16" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="966" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="..\library\Include\Nirvana\NirvanaBase.h" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2717" topLine="93" />
+		</Cursor>
+	</File>
+	<File name="..\orb\Include\CORBA\IORequest.h" open="0" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="18652" topLine="450" />
 		</Cursor>
 	</File>
 	<File name="..\library\Include\Nirvana\stl_utils.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -107,9 +107,9 @@
 			<Cursor1 position="997" topLine="15" />
 		</Cursor>
 	</File>
-	<File name="..\orb\Include\CORBA\DynamicServantImpl.h" open="0" top="0" tabpos="15" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="..\library\Source\lpch.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1083" topLine="9" />
+			<Cursor1 position="14" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
