@@ -8,6 +8,7 @@ cust_targets = []
 
 foreach f : orb_idl_no_ami
 	name = fs.name (f)
+	dir = fs.parent (f)
 	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy', '-no_ami',
@@ -17,12 +18,13 @@ foreach f : orb_idl_no_ami
 			'@INPUT@'],
 		output : [fs.replace_suffix (name, '.h'), fs.replace_suffix (name, '') + '_s.h', 	fs.replace_suffix (name, '.cpp')],
 		install : true,
-		install_dir : ['@CURRENT_SOURCE_DIR@/orb/Include/CORBA', '@CURRENT_SOURCE_DIR@/orb/Include/CORBA', '@CURRENT_SOURCE_DIR@/orb/Source']
+		install_dir : [dir, dir, '@CURRENT_SOURCE_DIR@/orb/Source']
 	)
 endforeach
 
 foreach f : orb_idl
 	name = fs.name (f)
+	dir = fs.parent (f)
 	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy', '-legacy',
@@ -32,12 +34,13 @@ foreach f : orb_idl
 			'@INPUT@'],
 		output : [fs.replace_suffix (name, '.h'), fs.replace_suffix (name, '') + '_s.h', 	fs.replace_suffix (name, '.cpp')],
 		install : true,
-		install_dir : ['@CURRENT_SOURCE_DIR@/orb/Include/CORBA', '@CURRENT_SOURCE_DIR@/orb/Include/CORBA', '@CURRENT_SOURCE_DIR@/orb/Source']
+		install_dir : [dir, dir, '@CURRENT_SOURCE_DIR@/orb/Source']
 	)
 endforeach
 
 foreach f : orb_idl_hdr_only
 	name = fs.name (f)
+	dir = fs.parent (f)
 	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy', '-no_ami', '-no_client_cpp',
@@ -46,12 +49,13 @@ foreach f : orb_idl_hdr_only
 			'@INPUT@'],
 		output : [fs.replace_suffix (name, '.h'), fs.replace_suffix (name, '') + '_s.h'],
 		install : true,
-		install_dir : ['@CURRENT_SOURCE_DIR@/orb/Include/CORBA', '@CURRENT_SOURCE_DIR@/orb/Include/CORBA']
+		install_dir : [dir, dir]
 	)
 endforeach
 
 foreach f : lib_idl
 	name = fs.name (f)
+	dir = fs.parent (f)
 	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy',
@@ -61,12 +65,13 @@ foreach f : lib_idl
 			'@INPUT@'],
 		output : [fs.replace_suffix (name, '.h'), fs.replace_suffix (name, '') + '_s.h', 	fs.replace_suffix (name, '.cpp')],
 		install : true,
-		install_dir : ['@CURRENT_SOURCE_DIR@/library/Include/Nirvana', '@CURRENT_SOURCE_DIR@/library/Include/Nirvana', '@CURRENT_SOURCE_DIR@/library/Source']
+		install_dir : [dir, dir, '@CURRENT_SOURCE_DIR@/library/Source']
 	)
 endforeach
 
 foreach f : lib_idl_hdr_only
 	name = fs.name (f)
+	dir = fs.parent (f)
 	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy', '-no_ami', '-no_client_cpp',
@@ -75,7 +80,7 @@ foreach f : lib_idl_hdr_only
 			'@INPUT@'],
 		output : [fs.replace_suffix (name, '.h'), fs.replace_suffix (name, '') + '_s.h'],
 		install : true,
-		install_dir : ['@CURRENT_SOURCE_DIR@/library/Include/Nirvana', '@CURRENT_SOURCE_DIR@/library/Include/Nirvana']
+		install_dir : [dir, dir]
 	)
 endforeach
 

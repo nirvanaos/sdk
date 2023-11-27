@@ -1,8 +1,12 @@
 # depslib dependency file v1.0
-1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\test\teststring.cpp
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\assert.cpp
+	"lpch.h"
+	<Nirvana/Formatter.h>
+	<Nirvana/System.h>
+	<assert.h>
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\source\lpch.h
 	<Nirvana/Nirvana.h>
-	<gtest/gtest.h>
-	<Mock/TestMock.h>
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\nirvana.h
 	<CORBA/CORBA.h>
@@ -140,7 +144,7 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typebyref.h
 	"TypeBase.h"
 
-1700984101 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\importinterface.h
+1701068180 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\importinterface.h
 	"NirvanaBase.h"
 	<CORBA/I_ref.h>
 
@@ -319,12 +323,12 @@
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\i_var.h
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memory.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memory.h
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\real_copy.h
 	<stdint.h>
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\deccalc.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\deccalc.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\sequence.h
 	<Nirvana/vector.h>
@@ -347,7 +351,7 @@
 	"basic_types.h"
 	"TCKind.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\environmentex.h
 	"Environment.h"
@@ -356,7 +360,7 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\exceptionset.h
 	"Exception.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\iorequest.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\iorequest.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typevarlen.inl
 	"TypeVarLen.h"
@@ -454,14 +458,14 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\lifecyclestatic.h
 	<Nirvana/core_objects.h>
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant_s.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant_s.h
 	"DynamicServant.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\lifecyclenone.h
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\refcnt.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\refcnt.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\abstractbase.inl
 	"AbstractBase.h"
@@ -501,20 +505,20 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\core_objects.h
 	<Nirvana/ImportInterface.h>
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami.h
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\context.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\context.h
 	"NVList.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\nvlist.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\nvlist.h
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\request.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\request.h
 	"AMI.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\policy.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\policy.h
 	"Current.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\current.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\current.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbase.h
 	"Object.h"
@@ -565,14 +569,14 @@
 	"TypeCode_s.h"
 	"TypeCodeOps.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode_s.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode_s.h
 	"TypeCode.h"
 	"TCKind_s.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode.h
 	"TCKind.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind_s.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind_s.h
 	"TCKind.h"
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecodeops.h
@@ -592,7 +596,7 @@
 	"Type_array.h"
 	"ORB.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\orb.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\orb.h
 	"InterfaceRepository.h"
 	"Request.h"
 	"Context.h"
@@ -600,7 +604,7 @@
 	"DynamicServant.h"
 	"RefCnt.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\interfacerepository.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\interfacerepository.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecodesequence.h
 	"TypeCodeImpl.h"
@@ -629,15 +633,15 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\string_compat.h
 	"String.inl"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\messaging.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\messaging.h
 	"Policy.h"
 	"Pollable.h"
 	"TimeBase.h"
 	"Request.h"
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\pollable.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\pollable.h
 
-1701006021 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\timebase.h
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\timebase.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\exceptionholder.h
 	"AMI.h"
@@ -650,255 +654,371 @@
 1700984101 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\olf.h
 	"ImportInterface.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest.h
-	<cstddef>
-	<cstdint>
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\formatter.h
+	"Nirvana.h"
+	"nls.h"
+	<stdarg.h>
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\nls.h
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\system.h
+	"Memory.h"
+	<CORBA/TimeBase.h>
+	<CORBA/CosNaming.h>
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\cosnaming.h
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\bitutils.cpp
+	"lpch.h"
+	<Nirvana/bitutils.h>
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\c_heap_dbg.cpp
+	"lpch.h"
+	<Nirvana/c_heap_dbg.h>
+	<Nirvana/System.h>
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\c_heap_dbg.h
+	"c_heap.h"
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\c_heap.h
+	"Nirvana.h"
 	<limits>
-	<memory>
-	<ostream>
-	<set>
-	<sstream>
-	<string>
-	<type_traits>
-	<vector>
-	"gtest/gtest-assertion-result.h"
-	"gtest/gtest-death-test.h"
-	"gtest/gtest-matchers.h"
-	"gtest/gtest-message.h"
-	"gtest/gtest-param-test.h"
-	"gtest/gtest-printers.h"
-	"gtest/gtest-test-part.h"
-	"gtest/gtest-typed-test.h"
-	"gtest/gtest_pred_impl.h"
-	"gtest/gtest_prod.h"
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-string.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-assertion-result.h
-	<memory>
-	<ostream>
-	<string>
-	<type_traits>
-	"gtest/gtest-message.h"
-	"gtest/internal/gtest-port.h"
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\decimal.cpp
+	"lpch.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-message.h
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\directoryiterator.cpp
+	"lpch.h"
+	<Nirvana/DirectoryIterator.h>
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\directoryiterator.h
+	<CORBA/CORBA.h>
+	"File.h"
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\file.h
+	"CORBA/CosNaming.h"
+	<CORBA/TimeBase.h>
+	<CORBA/CosTypedEventChannelAdmin.h>
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\costypedeventchanneladmin.h
+	"CosEventChannelAdmin.h"
+	"CosTypedEventComm.h"
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\coseventchanneladmin.h
+	"CosEventComm.h"
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\coseventcomm.h
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\costypedeventcomm.h
+	"CosEventComm.h"
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\filesystem.cpp
+	"lpch.h"
+	<Nirvana/filesystem.h>
+	<Nirvana/string_conv.h>
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\filesystem.h
+	<CORBA/CORBA.h>
+	<CORBA/CosNaming.h>
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\string_conv.h
+	"UTF8.h"
+	"basic_string.h"
+	"throw_exception.h"
 	<limits>
-	<memory>
-	<ostream>
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\fixed.cpp
+	"lpch.h"
 	<sstream>
-	<string>
-	"gtest/internal/gtest-port.h"
-	<type_traits>
-	"absl/strings/has_absl_stringify.h"
-	"absl/strings/str_cat.h"
-
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-port.h
-	<version>
-	<ciso646>
-	<ctype.h>
-	<stddef.h>
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<cerrno>
-	<cstdint>
-	<iostream>
-	<limits>
-	<locale>
-	<memory>
+	<istream>
 	<ostream>
-	<string>
-	<tuple>
-	<type_traits>
-	<vector>
-	<sys/stat.h>
-	<sys/types.h>
-	<AvailabilityMacros.h>
-	<TargetConditionals.h>
-	"gtest/internal/custom/gtest-port.h"
-	"gtest/internal/gtest-port-arch.h"
-	"absl/flags/declare.h"
-	"absl/flags/flag.h"
-	"absl/flags/reflection.h"
-	<direct.h>
-	<io.h>
-	<unistd.h>
-	<strings.h>
-	<unistd.h>
-	<android/api-level.h>
-	"absl/strings/string_view.h"
-	"re2/re2.h"
-	<regex.h>
-	<typeinfo>
-	<pthread.h>
-	<time.h>
-	<condition_variable>
-	<mutex>
-	"absl/types/any.h"
-	<any>
-	"absl/types/optional.h"
-	<optional>
-	"absl/strings/string_view.h"
-	<string_view>
-	"absl/types/variant.h"
-	<variant>
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\custom\gtest-port.h
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\lpch.cpp
+	"lpch.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-port-arch.h
-	<winapifamily.h>
-	<TargetConditionals.h>
+1700760238 source:c:\0work\nirvana\work\sdk\nirvana\library\source\memoryhelper.cpp
+	"lpch.h"
 
-1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\unistd.h
-	<stdint.h>
-	"CRTL/sys/types.h"
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\olf_iterator.cpp
+	"lpch.h"
+	<Nirvana/OLF.h>
+	<Nirvana/OLF_Iterator.h>
 
-1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\crtl\sys\types.h
-	<stdint.h>
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\olf_iterator.h
+	"ImportInterface.h"
 
-1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\strings.h
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\real_copy.cpp
+	"lpch.h"
+	<Nirvana/real_copy.h>
+	<Nirvana/bitutils.h>
+	<Nirvana/platform.h>
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-death-test.h
-	"gtest/internal/gtest-death-test-internal.h"
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\platform.h
+	"NirvanaBase.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-death-test-internal.h
-	<stdio.h>
-	<memory>
-	<string>
-	"gtest/gtest-matchers.h"
-	"gtest/internal/gtest-internal.h"
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\rescale.cpp
+	"lpch.h"
+	<Nirvana/rescale.h>
+	<cstdlib>
+	<Nirvana/bitutils.h>
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-matchers.h
-	<atomic>
-	<functional>
-	<memory>
-	<ostream>
-	<string>
-	<type_traits>
-	"gtest/gtest-printers.h"
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-port.h"
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\rescale.h
+	"NirvanaBase.h"
+	<intrin.h>
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-printers.h
-	<functional>
-	<memory>
-	<ostream>
-	<sstream>
-	<string>
-	<tuple>
-	<type_traits>
-	<typeinfo>
-	<utility>
-	<vector>
-	"absl/strings/has_absl_stringify.h"
-	"absl/strings/str_cat.h"
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-port.h"
-	<span>
-	"gtest/internal/custom/gtest-printers.h"
-
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-internal.h
-	"gtest/internal/gtest-port.h"
-	<stdlib.h>
-	<sys/types.h>
-	<sys/wait.h>
-	<unistd.h>
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\stl_utils.cpp
+	"lpch.h"
+	<signal.h>
+	<Nirvana/System.h>
 	<stdexcept>
-	<ctype.h>
-	<float.h>
-	<string.h>
-	<cstdint>
-	<functional>
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\signal.h
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\throw_exception.cpp
+	"lpch.h"
+	<Nirvana/throw_exception.h>
+	<CORBA/exceptions.h>
+	<CORBA/system_exceptions.h>
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\trace.cpp
+	"lpch.h"
+	"../Include/Nirvana/Formatter.h"
+	"../Include/Nirvana/System.h"
+
+1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\source\utf8.cpp
+	"lpch.h"
+	<Nirvana/UTF8.h>
+	<Nirvana/throw_exception.h>
+	<Nirvana/bitutils.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\any.cpp
+	"pch.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\source\pch.h
+	<CORBA/CORBA.h>
+
+1701067927 source:c:\0work\nirvana\work\sdk\nirvana\library\source\formatter.cpp
+	"lpch.h"
+	<Nirvana/Formatter.h>
 	<limits>
-	<map>
-	<set>
-	<string>
-	<type_traits>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\environmentimpl.cpp
+	"pch.h"
+
+1700984101 source:c:\0work\nirvana\work\sdk\nirvana\library\source\nirvana_module.cpp
+	"lpch.h"
+	"ModuleInitImpl.h"
+
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\source\moduleinitimpl.h
+	<CORBA/Server.h>
+	<Nirvana/ModuleInit_s.h>
+	"crt_startup.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\server.h
+	"CORBA.h"
+	"Implementation.h"
+	"ImplementationStatic.h"
+	"ImplementationLocal.h"
+	"ImplementationLocalStatic.h"
+	"ImplementationTied.h"
+	"PortableServer.h"
+	"ServantBasePOA.h"
+	"LocalObjectPOA.h"
+	"PseudoBase_s.h"
+	"ValueFactoryBase_s.h"
+	"make_stateless.h"
+	"make_pseudo.h"
+	"ValueImpl.h"
+	"ValueCreator.h"
+	"AMI_s.h"
+	"Servant_var.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementation.h
+	"ServantBaseImpl.h"
+	"FindInterface.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbaseimpl.h
+	"ServantBaseLink.h"
+	"ServantBase_s.h"
+	"ServantMemory.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbaselink.h
+	"servant_core.h"
+	"LifeCycleRefCnt.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servant_core.h
+	"Type_interface.h"
+	"ServantBase.h"
+
+1701068035 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbase_s.h
+	"ServantBase.h"
+	"Type_interface.h"
+	"PortableServer.h"
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\portableserver.h
+	"Policy.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantmemory.h
+	"core_objects.h"
+	"Client.h"
+	"ObjectFactoryInc.h"
+	"DynamicExport.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\objectfactoryinc.h
+	"LocalObject.h"
+	"ServantBase.h"
+	"ObjectFactory.h"
+
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\objectfactory.h
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\findinterface.h
+	"StringView.h"
+	"Bridge.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementationstatic.h
+	"ServantBaseStatic.h"
+
+1700984109 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbasestatic.h
+	<Nirvana/NirvanaBase.h>
+	<Nirvana/OLF.h>
+	"ServantBase_s.h"
+	"servant_core.h"
+	"ServantStatic.h"
+	"LifeCycleStatic.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementationlocal.h
+	"LocalObjectImpl.h"
+	"FindInterface.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobjectimpl.h
+	"LocalObjectLink.h"
+	"LocalObject_s.h"
+	"ServantMemory.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobjectlink.h
+	"local_core.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\local_core.h
+	"Object.h"
+	"LocalObject.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobject_s.h
+	"LocalObject.h"
+
+1701068071 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementationlocalstatic.h
+	"LocalObjectStatic.h"
+
+1700984109 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobjectstatic.h
+	<Nirvana/NirvanaBase.h>
+	<Nirvana/OLF.h>
+	"LocalObject_s.h"
+	"local_core.h"
+	"ServantStatic.h"
+	"LifeCycleStatic.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementationtied.h
+	"LocalObject.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbasepoa.h
+	"AbstractBasePOA.h"
+	"ServantBaseLink.h"
+	"ServantBase_s.h"
+	"ServantMemory.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobjectpoa.h
+	"ServantBasePOA.h"
+	"LocalObjectLink.h"
+	"LocalObject_s.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\pseudobase_s.h
+	"PseudoBase.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\valuefactorybase_s.h
+	"ValueFactoryBase.h"
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\make_stateless.h
+	"core_objects.h"
+	"ObjectFactoryInc.h"
+	"servant_reference.h"
 	<utility>
-	<vector>
-	"gtest/gtest-message.h"
-	"gtest/internal/gtest-filepath.h"
-	"gtest/internal/gtest-string.h"
-	"gtest/internal/gtest-type-util.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-filepath.h
-	<string>
-	"gtest/internal/gtest-port.h"
-	"gtest/internal/gtest-string.h"
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\make_pseudo.h
+	"I_ref.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-string.h
-	<mem.h>
-	<string.h>
-	<cstdint>
-	<sstream>
-	<string>
-	"gtest/internal/gtest-port.h"
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\valuecreator.h
+	"ImplementationPseudoStatic.h"
+	"ValueFactoryBase.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-type-util.h
-	<string>
-	<type_traits>
-	<typeinfo>
-	"gtest/internal/gtest-port.h"
-	<cxxabi.h>
-	<acxx_demangle.h>
+1701069261 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami_s.h
+	"AMI.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\custom\gtest-printers.h
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servant_var.h
+	"servant_reference.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-param-test.h
-	<iterator>
-	<utility>
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-param-util.h"
-	"gtest/internal/gtest-port.h"
+1701006021 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\moduleinit_s.h
+	"ModuleInit.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\internal\gtest-param-util.h
-	<ctype.h>
-	<cassert>
-	<iterator>
-	<map>
-	<memory>
-	<ostream>
-	<set>
-	<string>
-	<tuple>
-	<type_traits>
-	<utility>
-	<vector>
-	"gtest/gtest-printers.h"
-	"gtest/gtest-test-part.h"
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-port.h"
+1701006021 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\moduleinit.h
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-test-part.h
-	<iosfwd>
-	<ostream>
-	<string>
-	<vector>
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-string.h"
+1700576994 c:\0work\nirvana\work\sdk\nirvana\library\source\crt_startup.h
+	<Nirvana/NirvanaBase.h>
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest-typed-test.h
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-port.h"
-	"gtest/internal/gtest-type-util.h"
+1700984101 source:c:\0work\nirvana\work\sdk\nirvana\library\source\nirvana_process.cpp
+	"lpch.h"
+	<CORBA/Server.h>
+	<Nirvana/Legacy/Main_s.h>
+	"crt_startup.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest_pred_impl.h
-	"gtest/gtest-assertion-result.h"
-	"gtest/internal/gtest-internal.h"
-	"gtest/internal/gtest-port.h"
+1701006021 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\legacy\main_s.h
+	"Main.h"
 
-1701007687 c:\0work\nirvana\work\sdk\googletest\googletest\googletest\include\gtest\gtest_prod.h
+1701006021 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\legacy\main.h
 
-1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\mock\testmock.h
-	<gtest/gtest.h>
-	"MockMemory.h"
+1700984101 source:c:\0work\nirvana\work\sdk\nirvana\library\source\nirvana_singleton.cpp
+	"lpch.h"
+	"ModuleInitImpl.h"
 
-1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\mock\mockmemory.h
+1700984101 source:c:\0work\nirvana\work\sdk\nirvana\library\source\native.cpp
+	"lpch.h"
 
-1700576994 source:c:\0work\nirvana\work\sdk\nirvana\library\test\testvector.cpp
-	<Nirvana/Nirvana.h>
-	<gtest/gtest.h>
-	<Mock/TestMock.h>
-	<set>
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\exception.cpp
+	"pch.h"
+	<stdexcept>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\exceptionholder.cpp
+	"pch.h"
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\findinterface.cpp
+	"pch.h"
+	<CORBA/FindInterface.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\interface.cpp
+	"pch.h"
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\lifecyclenone.cpp
+	"pch.h"
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\local_core.cpp
+	"pch.h"
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\localobjectlink.cpp
+	"pch.h"
+	<CORBA/Server.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\localobjectpoa.cpp
+	"pch.h"
+	<CORBA/Server.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\nodefaultpoa.cpp
+	"pch.h"
+	<CORBA/NoDefaultPOA.h>
+
+1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\nodefaultpoa.h
+	<CORBA/Server.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\pch.cpp
+	"pch.h"
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\source\refcountlink.cpp
+	"pch.h"
 

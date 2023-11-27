@@ -2,7 +2,9 @@
 <CodeBlocks_workspace_file>
 	<Workspace title="Workspace">
 		<Project filename="nirvana/nirvana/nirvana.cbp" />
-		<Project filename="nirvana/TestSTL/TestSTL.cbp" />
+		<Project filename="nirvana/TestSTL/TestSTL.cbp">
+			<Depends filename="googletest/googletest.cbp" />
+		</Project>
 		<Project filename="googletest/googletest.cbp" />
 	</Workspace>
 </CodeBlocks_workspace_file>

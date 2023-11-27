@@ -118,15 +118,30 @@
 		<Unit filename="../library/Source/assert.cpp" />
 		<Unit filename="../library/Source/bitutils.cpp" />
 		<Unit filename="../library/Source/c_heap_dbg.cpp" />
-		<Unit filename="../library/Source/crt_startup.cpp" />
+		<Unit filename="../library/Source/crt_startup.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="../library/Source/crt_startup.h" />
 		<Unit filename="../library/Source/filesystem.cpp" />
 		<Unit filename="../library/Source/lpch.cpp" />
 		<Unit filename="../library/Source/lpch.h" />
-		<Unit filename="../library/Source/native.cpp" />
-		<Unit filename="../library/Source/nirvana_module.cpp" />
-		<Unit filename="../library/Source/nirvana_process.cpp" />
-		<Unit filename="../library/Source/nirvana_singleton.cpp" />
+		<Unit filename="../library/Source/native.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../library/Source/nirvana_module.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../library/Source/nirvana_process.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
+		<Unit filename="../library/Source/nirvana_singleton.cpp">
+			<Option compile="0" />
+			<Option link="0" />
+		</Unit>
 		<Unit filename="../library/Source/real_copy.cpp" />
 		<Unit filename="../library/Source/rescale.cpp" />
 		<Unit filename="../library/Source/stl_utils.cpp" />
@@ -223,7 +238,6 @@
 		<Unit filename="../orb/Include/CORBA/IOP_s.h" />
 		<Unit filename="../orb/Include/CORBA/IORequest.h" />
 		<Unit filename="../orb/Include/CORBA/IORequest.idl">
-			<Option compile="1" />
 			<Option compiler="clang" use="1" buildCommand="nidl2cpp $file -no_ami -no_proxy -no_client_cpp" />
 		</Unit>
 		<Unit filename="../orb/Include/CORBA/IORequestClient.h" />
