@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="googletest" />
+		<Option title="libmock" />
 		<Option pch_mode="2" />
 		<Option compiler="clang" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin/Debug/googletest" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Debug/mock" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="obj/Debug/" />
 				<Option type="2" />
@@ -18,7 +18,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin/Release/googletest" prefix_auto="1" extension_auto="1" />
+				<Option output="bin/Release/mock" prefix_auto="1" extension_auto="1" />
 				<Option working_dir="" />
 				<Option object_output="obj/Release/" />
 				<Option type="2" />
@@ -35,13 +35,19 @@
 		<Compiler>
 			<Add option="-std=c++17" />
 			<Add option="-std=c99" />
-			<Add option='-FI&quot;Nirvana/Nirvana.h&quot;' />
-			<Add directory="googletest/googletest" />
-			<Add directory="googletest/googletest/include" />
-			<Add directory="../nirvana/library/Include" />
-			<Add directory="../nirvana/orb/Include" />
+			<Add directory="../orb/Include" />
+			<Add directory="../library/Include" />
 		</Compiler>
-		<Unit filename="googletest/googletest/src/gtest-all.cc" />
+		<Unit filename="../library/Mock/debug-trap/debug-trap.h" />
+		<Unit filename="../library/Mock/g_ORB.cpp" />
+		<Unit filename="../library/Mock/g_legacy_system.cpp" />
+		<Unit filename="../library/Mock/g_memory.cpp" />
+		<Unit filename="../library/Mock/g_module.cpp" />
+		<Unit filename="../library/Mock/g_object_factory.cpp" />
+		<Unit filename="../library/Mock/g_system.cpp" />
+		<Unit filename="../orb/Mock/tc_TypeCode.cpp" />
+		<Unit filename="../orb/Mock/tc_constants.cpp" />
+		<Unit filename="../orb/Mock/tc_exceptions.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>
