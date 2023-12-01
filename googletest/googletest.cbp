@@ -33,7 +33,7 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++17" />
+			<Add option="-std=c++20" />
 			<Add option="-std=c99" />
 			<Add option='-FI&quot;Nirvana/Nirvana.h&quot;' />
 			<Add directory="googletest/googletest" />
@@ -42,6 +42,7 @@
 			<Add directory="../nirvana/orb/Include" />
 		</Compiler>
 		<Unit filename="googletest/googletest/src/gtest-all.cc" />
+		<Unit filename="googletest/googletest/src/gtest_main.cc" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

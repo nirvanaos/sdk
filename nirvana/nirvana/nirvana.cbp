@@ -34,7 +34,7 @@
 			</Target>
 		</Build>
 		<Compiler>
-			<Add option="-std=c++17" />
+			<Add option="-std=c++20" />
 			<Add option="-std=c99" />
 			<Add directory="../orb/Include" />
 			<Add directory="../library/Include" />
@@ -57,10 +57,18 @@
 		<Unit filename="../library/Include/Nirvana/Hash.h" />
 		<Unit filename="../library/Include/Nirvana/ImportInterface.h" />
 		<Unit filename="../library/Include/Nirvana/Launcher.h" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Legacy.h" />
 		<Unit filename="../library/Include/Nirvana/Legacy/Legacy.idl" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Legacy_Process.h" />
 		<Unit filename="../library/Include/Nirvana/Legacy/Legacy_Process.idl" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Legacy_Process_s.h" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Legacy_s.h" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Main.h" />
 		<Unit filename="../library/Include/Nirvana/Legacy/Main.idl" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Main_s.h" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Runnable.h" />
 		<Unit filename="../library/Include/Nirvana/Legacy/Runnable.idl" />
+		<Unit filename="../library/Include/Nirvana/Legacy/Runnable_s.h" />
 		<Unit filename="../library/Include/Nirvana/Memory.h" />
 		<Unit filename="../library/Include/Nirvana/Memory.idl">
 			<Option compiler="clang" use="1" buildCommand="nidl2cpp $file -no_ami -no_proxy -no_client_cpp" />
@@ -114,6 +122,7 @@
 		<Unit filename="../library/Source/Fixed.cpp" />
 		<Unit filename="../library/Source/Formatter.cpp" />
 		<Unit filename="../library/Source/Legacy_Process.cpp" />
+		<Unit filename="../library/Source/Memory.cpp" />
 		<Unit filename="../library/Source/MemoryHelper.cpp" />
 		<Unit filename="../library/Source/ModuleInitImpl.h" />
 		<Unit filename="../library/Source/OLF_Iterator.cpp" />

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1701265076 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_legacy_system.cpp
+1701342750 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_legacy_system.cpp
 	<Nirvana/Nirvana.h>
 	<Nirvana/Legacy/Legacy.h>
 
@@ -32,7 +32,7 @@
 	"Messaging.h"
 	"ExceptionHolder.h"
 
-1700984101 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\nirvanabase.h
+1701412789 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\nirvanabase.h
 	<stdint.h>
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\time_defs.h
@@ -104,7 +104,7 @@
 	"primitive_types.h"
 	"StringView.h"
 
-1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\stringview.h
+1701416789 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\stringview.h
 	"ABI_String.h"
 	<string.h>
 	<wchar.h>
@@ -130,13 +130,13 @@
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\assert.h
 
-1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typefixlen.h
+1701412603 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typefixlen.h
 	<Nirvana/NirvanaBase.h>
 	"TypeByVal.h"
 	"TypeByRef.h"
 	<type_traits>
 
-1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typebyref.h
+1701416979 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typebyref.h
 	"TypeBase.h"
 
 1701265076 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\importinterface.h
@@ -229,7 +229,7 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\userexception.h
 	"Exception.h"
 
-1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\any.h
+1701417085 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\any.h
 	"TypeVarLen.h"
 	"ABI_Any.h"
 	"Fixed.h"
@@ -278,7 +278,7 @@
 	<type_traits>
 	"MemoryHelper.h"
 
-1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memoryhelper.h
+1701417014 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memoryhelper.h
 	"Memory_forward.h"
 	<CORBA/exceptions.h>
 	<algorithm>
@@ -318,12 +318,12 @@
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\i_var.h
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memory.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memory.h
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\real_copy.h
 	<stdint.h>
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\deccalc.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\deccalc.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\sequence.h
 	<Nirvana/vector.h>
@@ -346,7 +346,7 @@
 	"basic_types.h"
 	"TCKind.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\environmentex.h
 	"Environment.h"
@@ -355,7 +355,7 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\exceptionset.h
 	"Exception.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\iorequest.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\iorequest.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typevarlen.inl
 	"TypeVarLen.h"
@@ -388,7 +388,7 @@
 	"ValueBase.h"
 	"IORequestClient.h"
 
-1701265072 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\valuebox.h
+1701417085 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\valuebox.h
 	"ValueBaseImpl.h"
 	"ValueImpl.h"
 	"RefCountBase.h"
@@ -446,21 +446,21 @@
 	"ServantStatic.h"
 	"LifeCycleStatic.h"
 
-1701265072 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantstatic.h
+1701342745 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantstatic.h
 	"ServantImpl.h"
 	"I_ptr.h"
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\lifecyclestatic.h
 	<Nirvana/core_objects.h>
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant_s.h
 	"DynamicServant.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\dynamicservant.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\lifecyclenone.h
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\refcnt.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\refcnt.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\abstractbase.inl
 	"AbstractBase.h"
@@ -500,20 +500,20 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\core_objects.h
 	<Nirvana/ImportInterface.h>
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami.h
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\context.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\context.h
 	"NVList.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\nvlist.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\nvlist.h
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\request.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\request.h
 	"AMI.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\policy.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\policy.h
 	"Current.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\current.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\current.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbase.h
 	"Object.h"
@@ -564,14 +564,14 @@
 	"TypeCode_s.h"
 	"TypeCodeOps.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode_s.h
 	"TypeCode.h"
 	"TCKind_s.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecode.h
 	"TCKind.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\tckind_s.h
 	"TCKind.h"
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecodeops.h
@@ -591,7 +591,7 @@
 	"Type_array.h"
 	"ORB.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\orb.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\orb.h
 	"InterfaceRepository.h"
 	"Request.h"
 	"Context.h"
@@ -599,7 +599,7 @@
 	"DynamicServant.h"
 	"RefCnt.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\interfacerepository.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\interfacerepository.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\typecodesequence.h
 	"TypeCodeImpl.h"
@@ -628,15 +628,15 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\string_compat.h
 	"String.inl"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\messaging.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\messaging.h
 	"Policy.h"
 	"Pollable.h"
 	"TimeBase.h"
 	"Request.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\pollable.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\pollable.h
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\timebase.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\timebase.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\exceptionholder.h
 	"AMI.h"
@@ -646,15 +646,15 @@
 1700984101 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\entry_point.h
 	"OLF.h"
 
-1701265076 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\olf.h
+1701342750 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\olf.h
 	"ImportInterface.h"
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\legacy\legacy.h
-	<nirvana/Legacy/Runnable.h>
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\legacy\legacy.h
+	"Runnable.h"
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\legacy\runnable.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\legacy\runnable.h
 
-1701265076 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_memory.cpp
+1701342750 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_memory.cpp
 	<CORBA/Server.h>
 	<malloc.h>
 	<Nirvana/Memory_s.h>
@@ -704,7 +704,7 @@
 	"Type_interface.h"
 	"PortableServer.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\portableserver.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\portableserver.h
 	"Policy.h"
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantmemory.h
@@ -718,7 +718,7 @@
 	"ServantBase.h"
 	"ObjectFactory.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\objectfactory.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\objectfactory.h
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\findinterface.h
 	"StringView.h"
@@ -727,7 +727,7 @@
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementationstatic.h
 	"ServantBaseStatic.h"
 
-1701265072 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbasestatic.h
+1701342745 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servantbasestatic.h
 	<Nirvana/NirvanaBase.h>
 	<Nirvana/OLF.h>
 	"ServantBase_s.h"
@@ -757,7 +757,7 @@
 1701068071 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\implementationlocalstatic.h
 	"LocalObjectStatic.h"
 
-1701265072 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobjectstatic.h
+1701342745 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\localobjectstatic.h
 	<Nirvana/NirvanaBase.h>
 	<Nirvana/OLF.h>
 	"LocalObject_s.h"
@@ -798,31 +798,31 @@
 	"ImplementationPseudoStatic.h"
 	"ValueFactoryBase.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\ami_s.h
 	"AMI.h"
 
 1700576830 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\servant_var.h
 	"servant_reference.h"
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memory_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\memory_s.h
 	"Memory.h"
 
-1701265076 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_module.cpp
+1701342750 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_module.cpp
 	<CORBA/Server.h>
 	<Nirvana/Module_s.h>
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\module_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\module_s.h
 	"Module.h"
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\module.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\module.h
 
-1701265076 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_object_factory.cpp
+1701342750 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_object_factory.cpp
 	<CORBA/CORBA.h>
 
-1701265076 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_orb.cpp
+1701342750 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_orb.cpp
 	<CORBA/CORBA.h>
 
-1701266817 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_system.cpp
+1701342750 source:c:\0work\nirvana\work\sdk\nirvana\library\mock\g_system.cpp
 	<CORBA/Server.h>
 	<signal.h>
 	<Nirvana/System_s.h>
@@ -839,43 +839,53 @@
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\include\signal.h
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\system_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\system_s.h
 	"System.h"
 	"Memory_s.h"
 	<CORBA/TimeBase_s.h>
 	<CORBA/CosNaming_s.h>
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\system.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\system.h
 	"Memory.h"
 	<CORBA/TimeBase.h>
 	<CORBA/CosNaming.h>
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\cosnaming.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\cosnaming.h
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\timebase_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\timebase_s.h
 	"TimeBase.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\cosnaming_s.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\cosnaming_s.h
 	"CosNaming.h"
 
 1700576994 c:\0work\nirvana\work\sdk\nirvana\library\mock\debug-trap\debug-trap.h
 	<builtins.h>
 	<signal.h>
 
-1701265255 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\file.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\library\include\nirvana\file.h
 	"CORBA/CosNaming.h"
 	<CORBA/TimeBase.h>
 	<CORBA/CosTypedEventChannelAdmin.h>
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\costypedeventchanneladmin.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\costypedeventchanneladmin.h
 	"CosEventChannelAdmin.h"
 	"CosTypedEventComm.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\coseventchanneladmin.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\coseventchanneladmin.h
 	"CosEventComm.h"
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\coseventcomm.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\coseventcomm.h
 
-1701265254 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\costypedeventcomm.h
+1701410633 c:\0work\nirvana\work\sdk\nirvana\orb\include\corba\costypedeventcomm.h
 	"CosEventComm.h"
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\mock\tc_constants.cpp
+	<CORBA/CORBA.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\mock\tc_exceptions.cpp
+	<CORBA/CORBA.h>
+	<CORBA/system_exceptions.h>
+
+1700576830 source:c:\0work\nirvana\work\sdk\nirvana\orb\mock\tc_typecode.cpp
+	<CORBA/CORBA.h>
 

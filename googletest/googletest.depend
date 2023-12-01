@@ -475,3 +475,7 @@
 	"absl/strings/string_view.h"
 	"absl/strings/strip.h"
 
+1701007687 source:c:\0work\nirvana\work\sdk\googletest\googletest\googletest\src\gtest_main.cc
+	<cstdio>
+	"gtest/gtest.h"
+
