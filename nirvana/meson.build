@@ -90,9 +90,16 @@ nirvana = static_library('nirvana',
 	lib_src,
 #	orb_src,
 # 	cust_targets,
-  include_directories : inc_dirs)
+  include_directories : inc_dirs
+	, cpp_pch: ['pch/pch.h', 'pch/pch.cpp']
+	)
 
 mock = static_library('mock',
 	lib_mock,
 	orb_mock,
   include_directories : inc_dirs)
+
+crtl = static_library('crtl',
+	crtl_src,
+  include_directories : inc_dirs)
+

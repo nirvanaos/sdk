@@ -1,6 +1,6 @@
 project('sdk', 'cpp',
 	default_options: [
-		'cpp_std=c++17',
+		'cpp_std=c++20',
 		'b_ndebug=if-release', 
 		'default_library=static',
 		'prefer_static=true',
