@@ -1,8 +1,6 @@
 nidl2cpp = find_program('nidl2cpp', required: true)
 fs = import('fs')
 
-lib_src = []
-mock_src = []
 subdir('library')
 subdir('orb')
 
@@ -90,9 +88,11 @@ inc_dirs = include_directories('orb/Include', 'library/Include')
 
 nirvana = static_library('nirvana',
 	lib_src,
+#	orb_src,
 # 	cust_targets,
   include_directories : inc_dirs)
 
 mock = static_library('mock',
-	mock_src,
+	lib_mock,
+	orb_mock,
   include_directories : inc_dirs)
