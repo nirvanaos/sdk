@@ -88,7 +88,7 @@ inc_dirs = include_directories('orb/Include', 'library/Include')
 
 nirvana = static_library('nirvana',
 	lib_src,
-#	orb_src,
+	orb_src,
 # 	cust_targets,
   include_directories : inc_dirs
 	, cpp_pch: ['pch/pch.h', 'pch/pch.cpp']
