@@ -13,7 +13,7 @@ foreach f : orb_idl_no_ami
 		command : [nidl2cpp, '-no_proxy', '-no_ami',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
-			'-inc_cpp', '../../pch/pch.h',
+			'-inc_cpp', '@CURRENT_SOURCE_DIR@/pch/pch.h',
 			'-out_cpp', '@OUTDIR@',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
@@ -27,7 +27,7 @@ foreach f : orb_idl
 		command : [nidl2cpp, '-no_proxy', '-legacy',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
-			'-inc_cpp', '../../pch/pch.h',
+			'-inc_cpp', '@CURRENT_SOURCE_DIR@/pch/pch.h',
 			'-out_cpp', '@OUTDIR@',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
@@ -53,6 +53,7 @@ foreach f : lib_idl
 		command : [nidl2cpp, '-no_proxy',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
+			'-inc_cpp', '@CURRENT_SOURCE_DIR@/pch/pch.h',
 			'-out_cpp', '@OUTDIR@',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
