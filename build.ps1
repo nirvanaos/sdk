@@ -9,14 +9,14 @@ if ($args.count -ge 2) {
 	$config = "debug"
 }
 if ($args.count -ge 3) {
-	$destdir = $args[1]
+	$destdir = $args[2]
 } else {
-	$destdir = "C:/nirvanasdk/lib"
+	$destdir = "C:/nirvanasdk"
 }
 
 $ErrorActionPreference = "Stop"
 
 meson setup --buildtype=$config --native-file=meson_$platform.ini build/$platform/$config
-meson compile -C build/$platform/$config
+#meson compile -C build/$platform/$config
 meson test -C build/$platform/$config
 meson install -C build/$platform/$config --tags lib --destdir $destdir/lib/$platform/$config

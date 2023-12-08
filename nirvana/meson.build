@@ -38,14 +38,11 @@ foreach f : orb_idl_hdr_only
 	name = fs.name (f)
 	custom_target (name,
 		input : f,
-		command : [nidl2cpp, '-no_proxy', '-no_ami', '-no_client_cpp',
+		command : [nidl2cpp, '-no_proxy', '-no_ami',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
-		
-		#build_always_stale: true,
-		#build_by_default: true
 	)
 endforeach
 
@@ -66,14 +63,11 @@ foreach f : lib_idl_hdr_only
 	name = fs.name (f)
 	custom_target (name,
 		input : f,
-		command : [nidl2cpp, '-no_proxy', '-no_ami', '-no_client_cpp',
+		command : [nidl2cpp, '-no_proxy', '-no_ami',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
-		
-		#build_always_stale: true,
-		#build_by_default: true
 	)
 endforeach
 
