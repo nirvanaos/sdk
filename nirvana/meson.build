@@ -74,8 +74,17 @@ endforeach
 
 inc_dirs = include_directories('orb/Include', 'library/Include')
 
-install_subdir ('orb/Include', install_dir: '.', exclude_files: 'CORBA/meson.build', install_tag: 'inc')
-install_subdir ('library/Include', install_dir: '.', exclude_files: 'Nirvana/meson.build', exclude_directories: 'CRTL', install_tag: 'inc')
+install_subdir ('orb/Include', 
+	install_dir: 'include', strip_directory: true,
+	exclude_files: 'CORBA/meson.build', install_tag: 'inc')
+
+install_subdir ('library/Include',
+ 	install_dir: 'include', strip_directory: true,
+	exclude_files: 'Nirvana/meson.build', exclude_directories: 'CRTL', install_tag: 'inc')
+
+install_subdir ('library/Include/CRTL',
+	install_dir: 'include', strip_directory: true,
+	exclude_directories: 'impl', install_tag: 'inc')
 
 nirvana = static_library('nirvana',
 	lib_src,
@@ -91,8 +100,16 @@ nirvana = static_library('nirvana',
 mock = static_library('mock',
 	lib_mock,
 	orb_mock,
-  include_directories : inc_dirs)
+  include_directories : inc_dirs,
+	install: true,
+	install_tag: 'lib',
+	install_dir: '.'
+	)
 
 crtl = static_library('crtl',
 	crtl_src,
-  include_directories : inc_dirs)
+  include_directories : [inc_dirs, include_directories ('library/Include/CRTL')],
+	install: true,
+	install_tag: 'lib',
+	install_dir: '.'
+	)

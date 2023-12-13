@@ -4,11 +4,11 @@ project('sdk', 'cpp',
 		'b_ndebug=if-release', 
 		'default_library=static',
 		'prefer_static=true',
-		'cpp_debugstl=true'
-		#,'cpp_link_args=-nostdlib++'
+		'cpp_debugstl=true',
+		'cpp_link_args=-static'
 	]
 )
-#add_project_arguments('-nostdlib++', '-static', language: 'cpp')
+add_project_arguments('-stdlib=libc++', '-static', language: 'cpp')
 subdir('nirvana')
 subdir('googletest')
 subdir('nirvana/library/Test')
