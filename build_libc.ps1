@@ -21,18 +21,23 @@ $libc_config = $PSScriptRoot + "\libc"
 
 Set-Location $llvm_root
 
-if (Test-Path .\build) {
+if (Test-Path .\build\$platform\$config) {
 	Remove-Item .\build -Force -Recurse
 }
-mkdir .\build
-Set-Location .\build
+mkdir .\build\$platform\$config
+Set-Location .\build\$platform\$config
 
-& cmake ../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
-	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang `
+#	-DLLVM_TARGET_TRIPLE="x86_64-w64-none-eabi" `
+
+& cmake ../../../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
+	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
 	-DLLVM_ENABLE_LIBCXX=ON `
-	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" ` # Redirect LIBC_ASSERT() to assert()
+	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
 	-DLIBC_TARGET_OS=baremetal `
-	-DLLVM_TARGET_TRIPLE="x86_64-w64-none-eabi" `
 	-DLIBC_TARGET_ARCHITECTURE="$platform" `
 	-DCMAKE_BUILD_TYPE="$config" `
-	-DCMAKE_INSTALL_PREFIX="$destdir"
+	-DCMAKE_INSTALL_PREFIX="$destdir/$platform/$config"
+
+ninja libc
+ninja install-libc
+Set-Location $PSScriptRoot
