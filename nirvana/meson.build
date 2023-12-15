@@ -106,10 +106,10 @@ mock = static_library('mock',
 	install_dir: '.'
 	)
 
-crtl = static_library('crtl',
-	crtl_src,
-  include_directories : [inc_dirs, include_directories ('library/Include/CRTL')],
-	install: true,
-	install_tag: 'lib',
-	install_dir: '.'
-	)
+#crtl = static_library('crtl',
+#	crtl_src,
+#  include_directories : [inc_dirs, include_directories ('library/Include/CRTL')],
+#	install: true,
+#	install_tag: 'lib',
+#	install_dir: '.'
+#	)

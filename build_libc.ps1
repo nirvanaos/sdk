@@ -1,7 +1,7 @@
 if ($args.count -ge 1) {
 	$platform = $args[0]
 } else {
-	$platform = "x86_64"
+	$platform = "x64"
 }
 if ($args.count -ge 2) {
 	$config = $args[1]
@@ -27,17 +27,25 @@ if (Test-Path .\build\$platform\$config) {
 mkdir .\build\$platform\$config
 Set-Location .\build\$platform\$config
 
-#	-DLLVM_TARGET_TRIPLE="x86_64-w64-none-eabi" `
+#$triple = "x86_64-w64-none-eabi"
+if ($platform -contains "x64") {
+	$triple = "x86_64-pc-none-eabi"
+} else {
+	$triple = "i386-pc-none-eabi"
+}
+
+Write-Host $triple
+
 
 & cmake ../../../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
 	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
-	-DLLVM_ENABLE_LIBCXX=ON `
 	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
-	-DLIBC_TARGET_OS=baremetal `
-	-DLIBC_TARGET_ARCHITECTURE="$platform" `
+	-DLLVM_ENABLE_LIBCXX=ON `
+	-DLLVM_LIBC_FULL_BUILD=ON `
+	-DLIBC_TARGET_TRIPLE="$triple" `
 	-DCMAKE_BUILD_TYPE="$config" `
 	-DCMAKE_INSTALL_PREFIX="$destdir/$platform/$config"
 
 ninja libc
-ninja install-libc
+# ninja install-libc
 Set-Location $PSScriptRoot
