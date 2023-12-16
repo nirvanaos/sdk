@@ -8,7 +8,7 @@ project('sdk', 'cpp',
 		'cpp_link_args=-static'
 	]
 )
-add_project_arguments('-stdlib=libc++', '-static', language: 'cpp')
+#add_project_arguments('-stdlib=libc++', '-static', language: 'cpp')
 subdir('nirvana')
 subdir('googletest')
 subdir('nirvana/library/Test')

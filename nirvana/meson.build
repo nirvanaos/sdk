@@ -106,10 +106,23 @@ mock = static_library('mock',
 	install_dir: '.'
 	)
 
-#crtl = static_library('crtl',
-#	crtl_src,
-#  include_directories : [inc_dirs, include_directories ('library/Include/CRTL')],
-#	install: true,
-#	install_tag: 'lib',
-#	install_dir: '.'
-#	)
+clang = find_program ('clang++')
+clang64 = fs.parent (fs.parent (clang.full_path ()))
+libc_inc = clang64 + '/include/c++/v1'
+mingw64 = fs.parent (clang64) + '/mingw64'
+clang_inc = mingw64 + '/lib/clang/17/include'
+
+sys_inc = include_directories (libc_inc, clang_inc, 'library/Include/CRTL')
+
+crtl = static_library('crtl',
+	crtl_src,
+  include_directories : [inc_dirs, sys_inc],
+	cpp_args: ['-nostdinc', '-nostdinc++', '-ffreestanding', '-U_WIN32', '-U__MINGW32__',
+	 '-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
+	 '-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
+	 '-D_LIBCPP_OBJECT_FORMAT_COFF',
+	 '-Wno-unused-function'],
+	install: true,
+	install_tag: 'lib',
+	install_dir: '.'
+	)

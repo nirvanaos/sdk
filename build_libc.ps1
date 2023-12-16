@@ -36,9 +36,13 @@ if ($platform -contains "x64") {
 
 Write-Host $triple
 
+$full_build = $false
 
-& cmake ../../../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
+if ($full_build) {
+$hdrgen = $llvm_root + "\build-libc-tools\bin\libc-hdrgen.exe"
+& cmake ../../../runtimes -G Ninja -DLLVM_ENABLE_RUNTIMES="libc" -DLIBC_CONFIG_PATH="$libc_config" `
 	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
+	-DLIBC_HDRGEN_EXE="$hdrgen" `
 	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
 	-DLLVM_ENABLE_LIBCXX=ON `
 	-DLLVM_LIBC_FULL_BUILD=ON `
@@ -46,6 +50,16 @@ Write-Host $triple
 	-DCMAKE_BUILD_TYPE="$config" `
 	-DCMAKE_INSTALL_PREFIX="$destdir/$platform/$config"
 
-ninja libc
+} else {
+	& cmake ../../../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
+	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
+	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
+	-DLLVM_ENABLE_LIBCXX=ON `
+	-DLIBC_TARGET_TRIPLE="$triple" `
+	-DCMAKE_BUILD_TYPE="$config" `
+	-DCMAKE_INSTALL_PREFIX="$destdir/$platform/$config"
+
+}
+#	ninja libc libm
 # ninja install-libc
-Set-Location $PSScriptRoot
+#Set-Location $PSScriptRoot
