@@ -16,50 +16,40 @@ if ($args.count -ge 3) {
 
 $ErrorActionPreference = "Stop"
 
-$llvm_root = $PSScriptRoot + "\llvm-project"
-$libc_config = $PSScriptRoot + "\libc"
+$llvm_root = "$PSScriptRoot\llvm-project"
+$libc_config = "$PSScriptRoot\libc"
+$main_build = "$PSScriptRoot\build"
+
+$build_path = "$llvm_root\build"
 
 Set-Location $llvm_root
 
-if (Test-Path .\build\$platform\$config) {
-	Remove-Item .\build -Force -Recurse
+if (Test-Path $build_path) {
+	Remove-Item $build_path -Force -Recurse
 }
-mkdir .\build\$platform\$config
-Set-Location .\build\$platform\$config
+mkdir $build_path
 
-#$triple = "x86_64-w64-none-eabi"
 if ($platform -contains "x64") {
 	$triple = "x86_64-pc-none-eabi"
 } else {
 	$triple = "i386-pc-none-eabi"
 }
 
-Write-Host $triple
+meson install -C $main_build --tags inc --destdir $build_path/projects/libc
 
-$full_build = $false
+& cmake "$llvm_root/llvm" -B "$build_path" -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
+-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
+-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
+-DLLVM_ENABLE_LIBCXX=ON `
+-DLIBC_TARGET_TRIPLE="$triple" `
+-DCMAKE_BUILD_TYPE="$config"
 
-if ($full_build) {
-$hdrgen = $llvm_root + "\build-libc-tools\bin\libc-hdrgen.exe"
-& cmake ../../../runtimes -G Ninja -DLLVM_ENABLE_RUNTIMES="libc" -DLIBC_CONFIG_PATH="$libc_config" `
-	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
-	-DLIBC_HDRGEN_EXE="$hdrgen" `
-	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
-	-DLLVM_ENABLE_LIBCXX=ON `
-	-DLLVM_LIBC_FULL_BUILD=ON `
-	-DLIBC_TARGET_TRIPLE="$triple" `
-	-DCMAKE_BUILD_TYPE="$config" `
-	-DCMAKE_INSTALL_PREFIX="$destdir/$platform/$config"
+ninja -C $build_path libc
 
-} else {
-	& cmake ../../../llvm -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" `
-	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ `
-	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" `
-	-DLLVM_ENABLE_LIBCXX=ON `
-	-DLIBC_TARGET_TRIPLE="$triple" `
-	-DCMAKE_BUILD_TYPE="$config" `
-	-DCMAKE_INSTALL_PREFIX="$destdir/$platform/$config"
-
+$dest_path = "$destdir\lib\$platform\$config"
+if (-not (Test-Path $dest_path)) {
+	New-Item -ItemType Directory -Path $dest_path
 }
-#	ninja libc libm
+Copy-Item "$build_path\projects\libc\lib\libllvmlibc.a" -Destination $dest_path -Force
 # ninja install-libc
-#Set-Location $PSScriptRoot
+Set-Location $PSScriptRoot

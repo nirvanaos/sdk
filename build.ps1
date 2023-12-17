@@ -16,7 +16,13 @@ if ($args.count -ge 3) {
 
 $ErrorActionPreference = "Stop"
 
-meson setup --buildtype=$config --native-file=meson_$platform.ini build/$platform/$config
+$build_path = "build"
+
+if (Test-Path $build_path) {
+	Remove-Item $build_path -Force -Recurse
+}
+
+meson setup --buildtype=$config --native-file=meson_$platform.ini "$build_path"
 #meson compile -C build/$platform/$config
-meson test -C build/$platform/$config
-meson install -C build/$platform/$config --tags lib --destdir $destdir/lib/$platform/$config
+meson test -C $build_path
+meson install -C $build_path --tags lib --destdir $destdir/lib/$platform/$config
