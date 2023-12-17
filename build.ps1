@@ -11,7 +11,7 @@ if ($args.count -ge 2) {
 if ($args.count -ge 3) {
 	$destdir = $args[2]
 } else {
-	$destdir = "C:/nirvanasdk"
+	$destdir = "$PSScriptRoot\distr"
 }
 
 $ErrorActionPreference = "Stop"
@@ -26,3 +26,5 @@ meson setup --buildtype=$config --native-file=meson_$platform.ini "$build_path"
 #meson compile -C build/$platform/$config
 meson test -C $build_path
 meson install -C $build_path --tags lib --destdir $destdir/lib/$platform/$config
+
+.\build_libc.ps1 $platform $config $destdir

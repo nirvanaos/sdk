@@ -22,8 +22,6 @@ $main_build = "$PSScriptRoot\build"
 
 $build_path = "$llvm_root\build"
 
-Set-Location $llvm_root
-
 if (Test-Path $build_path) {
 	Remove-Item $build_path -Force -Recurse
 }
@@ -32,7 +30,7 @@ mkdir $build_path
 if ($platform -contains "x64") {
 	$triple = "x86_64-pc-none-eabi"
 } else {
-	$triple = "i386-pc-none-eabi"
+	$triple = "i686-pc-none-eabi"
 }
 
 meson install -C $main_build --tags inc --destdir $build_path/projects/libc
