@@ -131,6 +131,7 @@ crtl = static_library('crtl',
 	 '-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
 	 '-D_LIBCPP_OBJECT_FORMAT_COFF',
 	 '-Wno-unused-function'],
+	cpp_pch: ['library/CRTL/pch/pch.h', 'library/CRTL/pch/pch.cpp'],
 	install: true,
 	install_tag: 'lib',
 	install_dir: '.'
