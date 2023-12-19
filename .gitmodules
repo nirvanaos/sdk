@@ -11,3 +11,6 @@
 	path = llvm-project
 	url = https://github.com/nirvanaos/llvm-project.git
 	shallow = true
+[submodule "nidl2cpp"]
+	path = nidl2cpp
+	url = https://github.com/nirvanaos/nidl2cpp
