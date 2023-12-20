@@ -25,11 +25,12 @@ fi
 meson install -C $main_build --tags inc --destdir $build_dir/projects/libc
 
 cmake "$llvm_root/llvm" -B "$build_dir" -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -DLIBC_CONFIG_PATH="$libc_config" \
--DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
--DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT" \
--DLLVM_ENABLE_LIBCXX=ON \
--DLIBC_TARGET_TRIPLE="$triple" \
--DCMAKE_BUILD_TYPE="$config"
+	-DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++ \
+	-DCMAKE_CXX_FLAGS="-DLIBC_COPT_USE_C_ASSERT -fshort-wchar" \
+	-DCMAKE_C_FLAGS="-DLIBC_COPT_USE_C_ASSERT -fshort-wchar" \
+	-DLLVM_ENABLE_LIBCXX=ON \
+	-DLIBC_TARGET_TRIPLE="$triple" \
+	-DCMAKE_BUILD_TYPE="$config"
 
 ninja -C $build_dir libc
 

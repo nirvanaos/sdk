@@ -86,18 +86,14 @@ install_subdir ('library/Include/CRTL',
 	install_dir: 'include', strip_directory: true,
 	exclude_directories: 'impl', install_tag: 'inc')
 
-# Map platform name to CLang architecture
-host_platforms = {'x64': ['-march=x86-64']}
-#, 'x86' : ['-march=x86-64', '-mcpu=i686']}
-all_platforms = host_platforms
-
-configurations = ['debug', 'release']
-
+# Build host libraries
+nirvana_lib_host = {}
+mock_lib_host = {}
 foreach platform, arch : host_platforms
 	foreach config : configurations
-		buildtype = config
+		options = ['buildtype=' + config]
 
-		nirvana_host = static_library('host/' + platform + '/' + config + '/libnirvana',
+		nirvana = static_library('host/' + platform + '/' + config + '/libnirvana',
 			lib_src,
 			orb_src,
 			cust_targets,
@@ -105,10 +101,13 @@ foreach platform, arch : host_platforms
 			include_directories : inc_dirs,
 			cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
 			cpp_args : arch,
+			override_options: options,
 			install: true,
 			install_dir: 'host/' + platform + '/' + config,
 			install_tag: 'host'
 			)
+
+		nirvana_lib_host += {platform + '-' + config : nirvana}
 
 		mock = static_library('host/' + platform + '/' + config + '/libmock',
 			lib_mock,
@@ -116,13 +115,18 @@ foreach platform, arch : host_platforms
 			name_prefix: '',
 			include_directories : inc_dirs,
 			cpp_args : arch,
+			override_options: options,
 			install: true,
 			install_dir: 'host/' + platform + '/' + config,
 			install_tag: 'host'
 			)
 
+		mock_lib_host += {platform + '-' + config : mock}
+
 	endforeach
 endforeach
+
+# Build Nirvana libraries
 
 clang = find_program ('clang++')
 clang64 = fs.parent (fs.parent (clang.full_path ()))
@@ -136,26 +140,31 @@ cpp_opts = ['-nostdinc', '-nostdinc++', '-ffreestanding', '-U_WIN32', '-U_WIN64'
 '-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 '-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
 '-D_LIBCPP_OBJECT_FORMAT_COFF',
+'-D'
+'-fshort-wchar',
+'-fsjlj-exceptions',
 '-Wno-unused-function']
 
 foreach platform, arch : all_platforms
 	foreach config : configurations
-		buildtype = config
+		options = ['buildtype=' + config]
 
 		imports = static_library(platform + '/' + config + '/libimports',
 			lib_import,
 			orb_import,
 			include_directories : [inc_dirs, sys_inc],
 			cpp_args: cpp_opts + arch,
+			override_options: options,
 			install: true,
 			install_dir: platform + '/' + config,
 			install_tag: 'lib'
-		)
+			)
 
 		crtl = static_library(platform + '/' + config + '/libcrtl',
 			crtl_src,
 			include_directories : [inc_dirs, sys_inc],
 			cpp_args: cpp_opts + arch,
+			override_options: options,
 			cpp_pch: ['library/CRTL/pch/pch.h', 'library/CRTL/pch/pch.cpp'],
 			install: true,
 			install_dir: platform + '/' + config,
