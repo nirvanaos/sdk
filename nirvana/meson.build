@@ -1,4 +1,4 @@
-nidl2cpp = find_program('nidl2cpp', required: true)
+nidl2cpp = find_program(meson.source_root () + '/distr/host/bin/nidl2cpp', required: true)
 fs = import('fs')
 
 subdir('library')
@@ -86,14 +86,14 @@ install_subdir ('library/Include/CRTL',
 	install_dir: 'include', strip_directory: true,
 	exclude_directories: 'impl', install_tag: 'inc')
 
-nirvana = static_library('nirvana',
+nirvana_host = static_library('nirvana_host',
 	lib_src,
 	orb_src,
  	cust_targets,
   include_directories : inc_dirs,
 	cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
 	install: true,
-	install_tag: 'lib',
+	install_tag: 'host',
 	install_dir: '.'
 	)
 
@@ -102,7 +102,7 @@ mock = static_library('mock',
 	orb_mock,
   include_directories : inc_dirs,
 	install: true,
-	install_tag: 'lib',
+	install_tag: 'host',
 	install_dir: '.'
 	)
 

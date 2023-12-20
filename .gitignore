@@ -3,3 +3,5 @@
 [Dd]ebug/
 [Rr]elease/
 distr/
+/build
+/build-*
