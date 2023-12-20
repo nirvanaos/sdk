@@ -10,5 +10,5 @@ project('sdk', 'cpp',
 )
 #add_project_arguments('-stdlib=libc++', '-static', language: 'cpp')
 subdir('nirvana')
-subdir('googletest')
-subdir('nirvana/library/Test')
+#subdir('googletest')
+#subdir('nirvana/library/Test')

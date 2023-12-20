@@ -34,4 +34,5 @@ cmake "$llvm_root/llvm" -B "$build_dir" -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -
 ninja -C $build_dir libc
 
 dest_path="$dest_dir/$platform/$config"
+mkdir -p $dest_path
 cp "$build_dir/projects/libc/lib/libllvmlibc.a" $dest_path

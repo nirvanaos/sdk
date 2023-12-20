@@ -86,34 +86,43 @@ install_subdir ('library/Include/CRTL',
 	install_dir: 'include', strip_directory: true,
 	exclude_directories: 'impl', install_tag: 'inc')
 
-nirvana_host = static_library('nirvana_host',
-	lib_src,
-	orb_src,
- 	cust_targets,
-  include_directories : inc_dirs,
-	cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
-	install: true,
-	install_tag: 'host',
-	install_dir: '.'
-	)
+# Map platform name to CLang architecture
+host_platforms = {'x64': ['-march=x86-64']}
+#, 'x86' : ['-march=x86-64', '-mcpu=i686']}
+all_platforms = host_platforms
 
-mock = static_library('mock',
-	lib_mock,
-	orb_mock,
-  include_directories : inc_dirs,
-	install: true,
-	install_tag: 'host',
-	install_dir: '.'
-	)
+configurations = ['debug', 'release']
 
-imports = static_library('imports',
-	lib_import,
-	orb_import,
-  include_directories : inc_dirs,
-	install: true,
-	install_tag: 'lib',
-	install_dir: '.'
-)
+foreach platform, arch : host_platforms
+	foreach config : configurations
+		buildtype = config
+
+		nirvana_host = static_library('host/' + platform + '/' + config + '/libnirvana',
+			lib_src,
+			orb_src,
+			cust_targets,
+			name_prefix: '',
+			include_directories : inc_dirs,
+			cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
+			cpp_args : arch,
+			install: true,
+			install_dir: 'host/' + platform + '/' + config,
+			install_tag: 'host'
+			)
+
+		mock = static_library('host/' + platform + '/' + config + '/libmock',
+			lib_mock,
+			orb_mock,
+			name_prefix: '',
+			include_directories : inc_dirs,
+			cpp_args : arch,
+			install: true,
+			install_dir: 'host/' + platform + '/' + config,
+			install_tag: 'host'
+			)
+
+	endforeach
+endforeach
 
 clang = find_program ('clang++')
 clang64 = fs.parent (fs.parent (clang.full_path ()))
@@ -123,16 +132,35 @@ clang_inc = mingw64 + '/lib/clang/17/include'
 
 sys_inc = include_directories (libc_inc, clang_inc, 'library/Include/CRTL')
 
-crtl = static_library('crtl',
-	crtl_src,
-  include_directories : [inc_dirs, sys_inc],
-	cpp_args: ['-nostdinc', '-nostdinc++', '-ffreestanding', '-U_WIN32', '-U_WIN64', '-U__MINGW32__',
-	 '-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
-	 '-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
-	 '-D_LIBCPP_OBJECT_FORMAT_COFF',
-	 '-Wno-unused-function'],
-	cpp_pch: ['library/CRTL/pch/pch.h', 'library/CRTL/pch/pch.cpp'],
-	install: true,
-	install_tag: 'lib',
-	install_dir: '.'
-	)
+cpp_opts = ['-nostdinc', '-nostdinc++', '-ffreestanding', '-U_WIN32', '-U_WIN64', '-U__MINGW32__',
+'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
+'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
+'-D_LIBCPP_OBJECT_FORMAT_COFF',
+'-Wno-unused-function']
+
+foreach platform, arch : all_platforms
+	foreach config : configurations
+		buildtype = config
+
+		imports = static_library(platform + '/' + config + '/libimports',
+			lib_import,
+			orb_import,
+			include_directories : [inc_dirs, sys_inc],
+			cpp_args: cpp_opts + arch,
+			install: true,
+			install_dir: platform + '/' + config,
+			install_tag: 'lib'
+		)
+
+		crtl = static_library(platform + '/' + config + '/libcrtl',
+			crtl_src,
+			include_directories : [inc_dirs, sys_inc],
+			cpp_args: cpp_opts + arch,
+			cpp_pch: ['library/CRTL/pch/pch.h', 'library/CRTL/pch/pch.cpp'],
+			install: true,
+			install_dir: platform + '/' + config,
+			install_tag: 'lib'
+			)
+
+	endforeach
+endforeach
