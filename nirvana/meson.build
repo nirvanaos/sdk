@@ -136,11 +136,10 @@ clang_inc = mingw64 + '/lib/clang/17/include'
 
 sys_inc = include_directories (libc_inc, clang_inc, 'library/Include/CRTL')
 
-cpp_opts = ['-nostdinc', '-nostdinc++', '-ffreestanding', '-U_WIN32', '-U_WIN64', '-U__MINGW32__',
+cpp_opts = ['-nostdinc', '-nostdinc++',
 '-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 '-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
 '-D_LIBCPP_OBJECT_FORMAT_COFF',
-'-D'
 '-fshort-wchar',
 '-fsjlj-exceptions',
 '-Wno-unused-function']
