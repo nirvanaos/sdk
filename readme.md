@@ -8,10 +8,11 @@ This repository is Git superproject for building the Nirvana SDK.
 
 ### MSYS2 packages
 
+mingw-w64-clang-x86_64-toolchain
 mingw-w64-clang-i686-toolchain
-* mingw-w64-clang-i686-crt-git
-* mingw-w64-clang-i686-compiler-rt
-* mingw-w64-clang-i686-clang-libs ?
+
+Copy all 32-bit libraries from "C:\msys64\clang32\lib\clang\17\lib\windows"
+to "C:\msys64\clang64\lib\clang\17\lib\windows"
 
 ## Submodules
 

@@ -24,7 +24,6 @@ foreach platform, arch : host_platforms
 endforeach
 
 # Build Nirvana libraries
-if false
 foreach platform, arch : all_platforms
 	foreach config : configurations
 		options = ['buildtype=' + config]
@@ -47,4 +46,3 @@ foreach platform, arch : all_platforms
 
 	endforeach
 endforeach
-endif
