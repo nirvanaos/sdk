@@ -25,4 +25,4 @@ configurations = ['debug', 'release']
 #add_project_arguments('-stdlib=libc++', '-static', language: 'cpp')
 subdir ('nirvana')
 subdir ('googletest')
-#subdir('nirvana/library/Test')
+subdir('nirvana/library/Test')

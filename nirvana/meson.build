@@ -87,11 +87,11 @@ install_subdir ('library/Include/CRTL',
 	exclude_directories: 'impl', install_tag: 'inc')
 
 # Build host libraries
-nirvana_lib_host = {}
-mock_lib_host = {}
+
 foreach platform, arch : host_platforms
 	foreach config : configurations
 		options = ['buildtype=' + config]
+		key = platform + '-' + config
 
 		nirvana = static_library('host/' + platform + '/' + config + '/libnirvana',
 			lib_src,
@@ -107,8 +107,6 @@ foreach platform, arch : host_platforms
 			install_tag: 'host'
 			)
 
-		nirvana_lib_host += {platform + '-' + config : nirvana}
-
 		mock = static_library('host/' + platform + '/' + config + '/libmock',
 			lib_mock,
 			orb_mock,
@@ -121,9 +119,12 @@ foreach platform, arch : host_platforms
 			install_tag: 'host'
 			)
 
-		mock_lib_host += {platform + '-' + config : mock}
-
 	endforeach
+endforeach
+
+debug ('Test debug')
+foreach key, lib : nirvana_lib_host
+	debug ('Nirvana ', key)
 endforeach
 
 # Build Nirvana libraries
@@ -151,6 +152,7 @@ foreach platform, arch : all_platforms
 		imports = static_library(platform + '/' + config + '/libimports',
 			lib_import,
 			orb_import,
+			name_prefix: '',
 			include_directories : [inc_dirs, sys_inc],
 			cpp_args: cpp_opts + arch,
 			override_options: options,
@@ -161,6 +163,7 @@ foreach platform, arch : all_platforms
 
 		crtl = static_library(platform + '/' + config + '/libcrtl',
 			crtl_src,
+			name_prefix: '',
 			include_directories : [inc_dirs, sys_inc],
 			cpp_args: cpp_opts + arch,
 			override_options: options,
