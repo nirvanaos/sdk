@@ -71,6 +71,8 @@ foreach f : lib_idl_hdr_only
 	)
 endforeach
 
+# Includes
+
 inc_dirs = include_directories('orb/Include', 'library/Include')
 
 install_subdir ('orb/Include', 
@@ -87,6 +89,7 @@ install_subdir ('library/Include/CRTL',
 
 # Build host libraries
 
+host_libs = []
 foreach platform, arch : host_platforms
 	foreach config : configurations
 		options = ['buildtype=' + config]
@@ -106,6 +109,8 @@ foreach platform, arch : host_platforms
 			install_tag: 'host'
 			)
 
+		host_libs += nirvana
+
 		mock = static_library ('host/' + platform + '/' + config + '/libmock',
 			lib_mock,
 			orb_mock,
@@ -117,6 +122,8 @@ foreach platform, arch : host_platforms
 			install_dir: 'host/' + platform + '/' + config,
 			install_tag: 'host'
 			)
+
+		host_libs += mock
 
 	endforeach
 endforeach

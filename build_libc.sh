@@ -10,6 +10,8 @@ else
 	config="Debug"
 fi
 
+set -e
+
 dest_dir="$PWD/distr"
 build_dir="$PWD/build-libc-$platform-$config"
 main_build="$PWD/build"

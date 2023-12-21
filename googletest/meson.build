@@ -18,6 +18,8 @@ foreach platform, arch : host_platforms
 			install_dir: 'host/' + platform + '/' + config,
 			)
 
+		host_libs += googletest
+
 	endforeach
 endforeach
 
