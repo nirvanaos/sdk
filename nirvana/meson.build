@@ -1,5 +1,4 @@
 nidl2cpp = find_program(meson.source_root () + '/distr/host/bin/nidl2cpp', required: true)
-fs = import('fs')
 
 subdir('library')
 subdir('orb')
@@ -91,28 +90,28 @@ install_subdir ('library/Include/CRTL',
 foreach platform, arch : host_platforms
 	foreach config : configurations
 		options = ['buildtype=' + config]
-		key = platform + '-' + config
+		cpp_args = arch ['cpp_args']
 
-		nirvana = static_library('host/' + platform + '/' + config + '/libnirvana',
+		nirvana = static_library ('host/' + platform + '/' + config + '/libnirvana',
 			lib_src,
 			orb_src,
 			cust_targets,
 			name_prefix: '',
 			include_directories : inc_dirs,
 			cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
-			cpp_args : arch,
+			cpp_args : cpp_args,
 			override_options: options,
 			install: true,
 			install_dir: 'host/' + platform + '/' + config,
 			install_tag: 'host'
 			)
 
-		mock = static_library('host/' + platform + '/' + config + '/libmock',
+		mock = static_library ('host/' + platform + '/' + config + '/libmock',
 			lib_mock,
 			orb_mock,
 			name_prefix: '',
 			include_directories : inc_dirs,
-			cpp_args : arch,
+			cpp_args : cpp_args,
 			override_options: options,
 			install: true,
 			install_dir: 'host/' + platform + '/' + config,
@@ -122,39 +121,20 @@ foreach platform, arch : host_platforms
 	endforeach
 endforeach
 
-debug ('Test debug')
-foreach key, lib : nirvana_lib_host
-	debug ('Nirvana ', key)
-endforeach
-
 # Build Nirvana libraries
-
-clang = find_program ('clang++')
-clang64 = fs.parent (fs.parent (clang.full_path ()))
-libc_inc = clang64 + '/include/c++/v1'
-mingw64 = fs.parent (clang64) + '/mingw64'
-clang_inc = mingw64 + '/lib/clang/17/include'
-
-sys_inc = include_directories (libc_inc, clang_inc, 'library/Include/CRTL')
-
-cpp_opts = ['-nostdinc', '-nostdinc++',
-'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
-'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
-'-D_LIBCPP_OBJECT_FORMAT_COFF',
-'-fshort-wchar',
-'-fsjlj-exceptions',
-'-Wno-unused-function']
-
+if false
 foreach platform, arch : all_platforms
 	foreach config : configurations
 		options = ['buildtype=' + config]
+
+		cpp_args = nirvana_cpp_opts + arch ['cpp_args']
 
 		imports = static_library(platform + '/' + config + '/libimports',
 			lib_import,
 			orb_import,
 			name_prefix: '',
 			include_directories : [inc_dirs, sys_inc],
-			cpp_args: cpp_opts + arch,
+			cpp_args: cpp_args,
 			override_options: options,
 			install: true,
 			install_dir: platform + '/' + config,
@@ -165,7 +145,7 @@ foreach platform, arch : all_platforms
 			crtl_src,
 			name_prefix: '',
 			include_directories : [inc_dirs, sys_inc],
-			cpp_args: cpp_opts + arch,
+			cpp_args: cpp_args,
 			override_options: options,
 			cpp_pch: ['library/CRTL/pch/pch.h', 'library/CRTL/pch/pch.cpp'],
 			install: true,
@@ -175,3 +155,4 @@ foreach platform, arch : all_platforms
 
 	endforeach
 endforeach
+endif
