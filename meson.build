@@ -45,12 +45,13 @@ all_platforms = {
 }
 
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
-'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
-'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
-'-D_LIBCPP_OBJECT_FORMAT_COFF',
-'-fshort-wchar',
-'-fsjlj-exceptions',
-'-Wno-unused-function']
+	'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
+	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
+	'-D_LIBCPP_OBJECT_FORMAT_COFF',
+	'-fshort-wchar',
+	'-fsjlj-exceptions',
+	'-Wno-unused-function'
+]
 
 #add_project_arguments('-stdlib=libc++', '-static', language: 'cpp')
 subdir ('nirvana')
