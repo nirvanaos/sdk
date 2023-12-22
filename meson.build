@@ -44,8 +44,6 @@ all_platforms = {
 	}
 }
 
-configurations = ['debug', 'release']
-
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 '-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 '-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
