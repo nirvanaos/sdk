@@ -11,6 +11,8 @@ This repository is Git superproject for building the Nirvana SDK.
 mingw-w64-clang-x86_64-toolchain
 mingw-w64-clang-i686-toolchain
 
+Use CLANG64 environment.
+
 Copy all 32-bit libraries from "C:\msys64\clang32\lib\clang\17\lib\windows"
 to "C:\msys64\clang64\lib\clang\17\lib\windows"
 
@@ -25,5 +27,7 @@ Google test framework.
 ### nirvana/orb
 
 ### llvm-project
+
+### nidl2cpp
 
 

@@ -9,7 +9,7 @@ fi
 
 set -e
 
-meson setup $build_dir --reconfigure --buildtype $config
+meson setup $build_dir --reconfigure --buildtype $config --bindir /c/msys64/clang64/bin
 #meson compile -C $build_dir
 meson test -C $build_dir
-meson install -C $build_dir --destdir $dest_dir
+meson install -C $build_dir --tags host,lib --destdir $dest_dir

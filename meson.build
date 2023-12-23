@@ -5,8 +5,7 @@ project('sdk', 'cpp',
 		'default_library=static',
 		'prefer_static=true',
 		'cpp_debugstl=true',
-		'cpp_link_args=-static',
-		'bindir=' + 'c:/msys64/clang32/bin'
+		'cpp_link_args=-static'
 	]
 )
 
