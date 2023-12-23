@@ -9,6 +9,13 @@ project('sdk', 'cpp',
 	]
 )
 
+compiler = meson.get_compiler ('cpp')
+if compiler.get_id () != 'clang'
+	error ('Compiler must be CLang')
+endif
+
+clang_ver = compiler.version ().split('.')[0]
+
 fs = import('fs')
 
 clang = find_program ('clang++')
@@ -18,7 +25,7 @@ clang32 = msys64 + '/clang32'
 
 libc_inc = clang64 + '/include/c++/v1'
 mingw64 = fs.parent (clang64) + '/mingw64'
-clang_inc = mingw64 + '/lib/clang/17/include'
+clang_inc = mingw64 + '/lib/clang/' + clang_ver + '/include'
 
 sys_inc = include_directories (libc_inc, clang_inc, 'nirvana/library/Include/CRTL')
 
@@ -29,7 +36,7 @@ host_platforms = {
 		'link_args' : ['--sysroot=' + clang64]
 	},
 	'x86': {
-		'cpp_args' : ['--target=i686-windows-gnu'],
+		'cpp_args' : ['--target=i686-w64-windows-gnu'],
 		'link_args' : ['-m32', '--sysroot=' + clang32]
 	}
 }

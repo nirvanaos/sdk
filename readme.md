@@ -6,28 +6,43 @@ This repository is Git superproject for building the Nirvana SDK.
 
 ## Dependencies
 
-### MSYS2 packages
+### [Meson](https://mesonbuild.com/) + Ninja
+
+Ninja usually included in the Meson installation.
+
+### [CMake](https://cmake.org/)
+
+### [vcpkg](https://vcpkg.io/)
+
+### [MSYS2](https://www.msys2.org/)
+
+Install following MSYS2 packages:
 
 mingw-w64-clang-x86_64-toolchain
 mingw-w64-clang-i686-toolchain
 
-Use CLANG64 environment.
+Copy `libclang_rt.builtins-i386.a` from "C:\msys64\clang32\lib\clang\17\lib\windows"
+to "C:\msys64\clang64\lib\clang\17\lib\windows".
+This fix CLang cross-compilation problem that may be will solved in the further versions.
 
-Copy all 32-bit libraries from "C:\msys64\clang32\lib\clang\17\lib\windows"
-to "C:\msys64\clang64\lib\clang\17\lib\windows"
+Use MSYS2 CLANG64 environment.
 
 ## Submodules
 
-### googletest
+### googletest/[googletest](https://github.com/google/googletest.git)
 
 Google test framework.
 
-### nirvana/library
+### nirvana/[library](https://github.com/nirvanaos/library.git)
 
-### nirvana/orb
+Nirvana runtime library.
 
-### llvm-project
+### nirvana/[orb](https://github.com/nirvanaos/orb.git)
 
-### nidl2cpp
+Nirvana ORB IDL support library.
 
+### [llvm-project](https://github.com/llvm/llvm-project.git)
 
+### [nidl2cpp](https://github.com/nirvanaos/nidl2cpp)
+
+Nirvana IDL compiler.

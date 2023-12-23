@@ -5,3 +5,4 @@
 distr/
 /build
 /build-*
+/sdk.tar.xz
