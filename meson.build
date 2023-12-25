@@ -46,10 +46,18 @@ host_platforms = { 'windows':
 
 all_platforms = {
 	'x64': {
-		'cpp_args' : ['--target=x86_64-pc-none-eabi', '-mlzcnt']
+		'cpp_args' : [
+#			'--target=x86_64-pc-none-eabi', Produces ELF object, need ELF loader
+			'--target=x86_64-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__', '-U__MINGW64__',
+#			'--target=x86_64-pc-none-coff', 
+			'-mlzcnt'],
+		'link_args' : ['-nodefaultlibs', '-m64']
 	},
 	'x86': {
-		'cpp_args' : ['--target=i686-pc-none-eabi']
+#		'cpp_args' : ['--target=i686-pc-none-eabi'], Produces ELF object, need ELF loader
+		'cpp_args' : ['--target=i686-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__'],
+#		'cpp_args' : ['--target=i686-pc-none-coff'], 
+		'link_args' : ['-m32', '--sysroot=' + clang32]
 	}
 }
 

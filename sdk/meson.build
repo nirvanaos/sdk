@@ -56,8 +56,11 @@ host_platforms = { 'windows':
 
 all_platforms = {
 	'x64': {
-		'cpp_args' : ['--target=x86_64-pc-none-eabi', '-mlzcnt'],
-		'link_args' : []
+		'cpp_args' : [
+#			'--target=x86_64-pc-none-eabi',
+			'--target=x86_64-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__', '-U__MINGW64__',
+			'-mlzcnt'],
+		'link_args' : ['-nodefaultlibs', '-m64']
 	}
 #	,
 #	'x86': {
@@ -88,7 +91,7 @@ foreach platform, arch : all_platforms
 	dep = declare_dependency (
 		include_directories: sys_inc,
 		compile_args : nirvana_cpp_opts + all_platforms [platform]['cpp_args'],
-		link_args : [ '-L' + lib_dir ] + all_platforms [platform]['link_args'],
+		link_args : all_platforms [platform]['link_args'],
 		dependencies: platform_deps
 	)
 	sdk_deps += {platform: dep}
