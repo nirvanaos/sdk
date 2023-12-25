@@ -5,4 +5,5 @@
 bin/
 /build
 /build-*
-/sdk.tar.xz
+/sdk/include/
+/sdk-1.0.tar.xz
