@@ -2,7 +2,7 @@
 /.code_blocks
 [Dd]ebug/
 [Rr]elease/
-distr/
+bin/
 /build
 /build-*
 /sdk.tar.xz

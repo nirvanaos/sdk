@@ -1,4 +1,4 @@
-dest_dir="$PWD/distr"
+dest_dir="sdk"
 build_dir="build"
 
 set -e

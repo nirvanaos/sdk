@@ -7,12 +7,12 @@ fi
 if [[ $# -ge 2 ]]; then
 	config=$2
 else
-	config="Debug"
+	config="debug"
 fi
 
 set -e
 
-dest_dir="$PWD/distr"
+dest_dir="$PWD/sdk"
 build_dir="$PWD/build-libc-$platform-$config"
 main_build="$PWD/build"
 llvm_root="$PWD/llvm-project"
@@ -36,6 +36,7 @@ cmake "$llvm_root/llvm" -B "$build_dir" -G Ninja -DLLVM_ENABLE_PROJECTS="libc" -
 
 ninja -C $build_dir libc
 
-dest_path="$dest_dir/$platform/$config"
+dest_path="$dest_dir/$config"
 mkdir -p $dest_path
-cp "$build_dir/projects/libc/lib/libllvmlibc.a" $dest_path
+set -x
+cp "$build_dir/projects/libc/lib/libllvmlibc.a" "$dest_path/libllvmlibc-$platform.a"

@@ -1,4 +1,5 @@
-nidl2cpp = find_program(meson.source_root () + '/distr/host/bin/nidl2cpp', required: true)
+host_system = build_machine.system ()
+nidl2cpp = find_program (meson.source_root () + '/sdk/' + host_system + '/bin/nidl2cpp', required: true)
 
 subdir('library')
 subdir('orb')
@@ -73,7 +74,7 @@ endforeach
 
 # Includes
 
-inc_dirs = include_directories('orb/Include', 'library/Include')
+inc_dirs = include_directories ('orb/Include', 'library/Include')
 
 install_subdir ('orb/Include', 
 	install_dir: 'include', strip_directory: true,
@@ -89,37 +90,33 @@ install_subdir ('library/Include/CRTL',
 
 # Build host libraries
 
-host_libs = []
+host_libs = {}
 foreach platform, arch : host_platforms
 	cpp_args = arch ['cpp_args']
 
-	nirvana = static_library ('host/' + platform + '/libnirvana',
+	nirvana = static_library ('nirvana-' + platform + '-' + host_system,
 		lib_src,
 		orb_src,
 		cust_targets,
-		name_prefix: '',
 		include_directories : inc_dirs,
 		cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
 		cpp_args : cpp_args,
 		install: true,
-		install_dir: 'host/' + platform + '/' + get_option ('buildtype'),
+		install_dir: host_system + '/' + get_option ('buildtype'),
 		install_tag: 'host'
 		)
 
-	host_libs += nirvana
-
-	mock = static_library ('host/' + platform + '/libmock',
+	mock = static_library ('mock-' + platform + '-' + host_system,
 		lib_mock,
 		orb_mock,
-		name_prefix: '',
 		include_directories : inc_dirs,
 		cpp_args : cpp_args,
 		install: true,
-		install_dir: 'host/' + platform + '/' + get_option ('buildtype'),
+		install_dir: host_system + '/' + get_option ('buildtype'),
 		install_tag: 'host'
 		)
 
-	host_libs += mock
+	host_libs += { platform: [nirvana, mock] }
 
 endforeach
 
@@ -128,38 +125,35 @@ endforeach
 foreach platform, arch : all_platforms
 	cpp_args = nirvana_cpp_opts + arch ['cpp_args']
 
-	nirvana = static_library (platform + '/libnirvana',
+	nirvana = static_library ('nirvana-' + platform,
 		lib_src,
 		orb_src,
 		cust_targets,
-		name_prefix: '',
 		include_directories : [inc_dirs, sys_inc],
 		cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
 		cpp_args : cpp_args,
 		install: true,
-		install_dir: platform + '/' + get_option ('buildtype'),
+		install_dir: get_option ('buildtype'),
 		install_tag: 'lib'
 		)
 
-	imports = static_library (platform + '/libimports',
+	imports = static_library ('imports-' + platform,
 		lib_import,
 		orb_import,
-		name_prefix: '',
 		include_directories : [inc_dirs, sys_inc],
 		cpp_args: cpp_args,
 		install: true,
-		install_dir: platform + '/' + get_option ('buildtype'),
+		install_dir: get_option ('buildtype'),
 		install_tag: 'lib'
 		)
 
-	crtl = static_library(platform + '/libcrtl',
+	crtl = static_library('crtl-' + platform,
 		crtl_src,
-		name_prefix: '',
 		include_directories : [inc_dirs, sys_inc],
 		cpp_args: cpp_args,
 		cpp_pch: ['library/CRTL/pch/pch.h', 'library/CRTL/pch/pch.cpp'],
 		install: true,
-		install_dir: platform + '/' + get_option ('buildtype'),
+		install_dir: get_option ('buildtype'),
 		install_tag: 'lib'
 		)
 
