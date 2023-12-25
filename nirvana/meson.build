@@ -1,5 +1,4 @@
-host_system = build_machine.system ()
-nidl2cpp = find_program (meson.source_root () + '/sdk/' + host_system + '/bin/nidl2cpp', required: true)
+nidl2cpp = find_program (meson.source_root () + '/sdk/' + build_machine.system () + '/bin/nidl2cpp', required: true)
 
 subdir('library')
 subdir('orb')
@@ -91,10 +90,10 @@ install_subdir ('library/Include/CRTL',
 # Build host libraries
 
 host_libs = {}
-foreach platform, arch : host_platforms
+foreach platform, arch : host_platforms [target_machine.system ()]
 	cpp_args = arch ['cpp_args']
 
-	nirvana = static_library ('nirvana-' + platform + '-' + host_system,
+	nirvana = static_library ('nirvana-' + platform + '-' + target_machine.system (),
 		lib_src,
 		orb_src,
 		cust_targets,
@@ -102,17 +101,17 @@ foreach platform, arch : host_platforms
 		cpp_pch: ['pch/pch.h', 'pch/pch.cpp'],
 		cpp_args : cpp_args,
 		install: true,
-		install_dir: host_system + '/' + get_option ('buildtype'),
+		install_dir: target_machine.system () + '/' + get_option ('buildtype'),
 		install_tag: 'host'
 		)
 
-	mock = static_library ('mock-' + platform + '-' + host_system,
+	mock = static_library ('mock-' + platform + '-' + target_machine.system (),
 		lib_mock,
 		orb_mock,
 		include_directories : inc_dirs,
 		cpp_args : cpp_args,
 		install: true,
-		install_dir: host_system + '/' + get_option ('buildtype'),
+		install_dir: target_machine.system () + '/' + get_option ('buildtype'),
 		install_tag: 'host'
 		)
 

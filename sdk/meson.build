@@ -41,15 +41,31 @@ sys_inc = include_directories (libc_inc, clang_inc, 'include')
 
 # Map platform name to CLang architecture
 
-platforms = {
-	'x64': {
-		'cpp_args' : ['--target=x86_64-pc-none-eabi', '-mlzcnt']
-	},
-	'x86': {
-		'cpp_args' : ['--target=i686-pc-none-eabi']
+host_platforms = { 'windows':
+	{
+		'x64': {
+			'cpp_args' : ['--target=x86_64-w64-windows-gnu', '-mlzcnt'],
+			'link_args' : ['--sysroot=' + clang64]
+		},
+		'x86': {
+			'cpp_args' : ['--target=i686-w64-windows-gnu'],
+			'link_args' : ['-m32', '--sysroot=' + clang32]
+		}
 	}
 }
 
+all_platforms = {
+	'x64': {
+		'cpp_args' : ['--target=x86_64-pc-none-eabi', '-mlzcnt'],
+		'link_args' : []
+	},
+	'x86': {
+		'cpp_args' : ['--target=i686-pc-none-eabi'],
+		'link_args' : ['-m32']
+	}
+}
+
+# C++ options to build Nirvana binaries
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
@@ -59,9 +75,22 @@ nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-Wno-unused-function'
 ]
 
-sdk_dep = declare_dependency (
-	include_directories: sys_inc,
-	compile_args : platforms ['x64']['cpp_args']
-)
+lib_dir = meson.current_source_dir () + '/' + get_option ('buildtype')
+libraries = ['nirvana', 'imports', 'crtl', 'googletest', 'llvmlibc']
 
-meson.override_dependency ('sdk', sdk_dep)
+sdk_deps = {}
+foreach platform, arch : all_platforms
+	platform_deps = []
+	foreach lib : libraries
+		platform_deps += compiler.find_library (lib + '-' + platform, dirs: lib_dir)
+	endforeach
+	dep = declare_dependency (
+		include_directories: sys_inc,
+		compile_args : nirvana_cpp_opts + all_platforms [platform]['cpp_args'],
+		link_args : [ 'L' + libdir ] + all_platforms [platform]['link_args'],
+		dependencies: platform_deps
+	)
+	sdk_deps += {platform: dep}
+endforeach
+
+#meson.override_dependency ('sdk', sdk_dep)

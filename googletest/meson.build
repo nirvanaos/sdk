@@ -1,17 +1,17 @@
 test_inc_dirs = [inc_dirs, include_directories('googletest/googletest/include')]
 
 # Build host libraries
-foreach platform, arch : host_platforms
+foreach platform, arch : host_platforms [target_machine.system ()]
 	cpp_args = arch ['cpp_args'] + ['-includeNirvana/Nirvana.h']
 
-	googletest = static_library('googletest-' + platform + '-' + host_system,
+	googletest = static_library('googletest-' + platform + '-' + target_machine.system (),
 		'googletest/googletest/src/gtest-all.cc',
 		'googletest/googletest/src/gtest_main.cc',
 		include_directories : [test_inc_dirs, include_directories ('googletest/googletest')],
 		cpp_args: cpp_args,
 		install: true,
 		install_tag: 'host',
-		install_dir: host_system + '/' + get_option ('buildtype'),
+		install_dir: target_machine.system () + '/' + get_option ('buildtype'),
 		)
 
 	host_libs += {platform: host_libs [platform] + googletest}

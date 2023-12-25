@@ -30,14 +30,17 @@ clang_inc = mingw64 + '/lib/clang/' + clang_ver + '/include'
 sys_inc = include_directories (libc_inc, clang_inc, 'nirvana/library/Include/CRTL')
 
 # Map platform name to CLang architecture
-host_platforms = {
-	'x64': {
-		'cpp_args' : ['--target=x86_64-w64-windows-gnu', '-mlzcnt'],
-		'link_args' : ['--sysroot=' + clang64]
-	},
-	'x86': {
-		'cpp_args' : ['--target=i686-w64-windows-gnu'],
-		'link_args' : ['-m32', '--sysroot=' + clang32]
+
+host_platforms = { 'windows':
+	{
+		'x64': {
+			'cpp_args' : ['--target=x86_64-w64-windows-gnu', '-mlzcnt'],
+			'link_args' : ['--sysroot=' + clang64]
+		},
+		'x86': {
+			'cpp_args' : ['--target=i686-w64-windows-gnu'],
+			'link_args' : ['-m32', '--sysroot=' + clang32]
+		}
 	}
 }
 
@@ -50,6 +53,7 @@ all_platforms = {
 	}
 }
 
+# C++ options to build Nirvana binaries
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
