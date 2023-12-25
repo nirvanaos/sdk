@@ -36,3 +36,7 @@ foreach platform, arch : all_platforms
 		)
 
 endforeach
+
+install_subdir ('googletest/googletest/include/gtest',
+	install_dir: 'include',
+	install_tag: 'inc')

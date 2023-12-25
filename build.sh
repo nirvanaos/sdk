@@ -15,3 +15,6 @@ meson install -C $build_dir --tags inc --destdir "$PWD/$dest_dir"
 #./build_libc.sh x86 Release
 
 tar -Jcvf sdk-1.0.tar.xz $dest_dir
+
+rm -rf ../TestORB/subprojects/sdk
+cp sdk-1.0.tar.xz ../TestORB/subprojects/packagefiles

@@ -88,7 +88,7 @@ foreach platform, arch : all_platforms
 	dep = declare_dependency (
 		include_directories: sys_inc,
 		compile_args : nirvana_cpp_opts + all_platforms [platform]['cpp_args'],
-		link_args : [ 'L' + lib_dir ] + all_platforms [platform]['link_args'],
+		link_args : [ '-L' + lib_dir ] + all_platforms [platform]['link_args'],
 		dependencies: platform_deps
 	)
 	sdk_deps += {platform: dep}

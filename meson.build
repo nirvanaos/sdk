@@ -67,3 +67,7 @@ nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 subdir ('nirvana')
 subdir ('googletest')
 subdir ('nirvana/library/Test')
+
+install_subdir ('preprocessor/include/boost',
+	install_dir: 'include',
+	install_tag: 'inc')
