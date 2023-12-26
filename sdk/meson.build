@@ -60,7 +60,7 @@ all_platforms = {
 #			'--target=x86_64-pc-none-eabi',
 			'--target=x86_64-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__', '-U__MINGW64__',
 			'-mlzcnt'],
-		'link_args' : ['-nodefaultlibs', '-m64']
+		'link_args' : [ '-edummy', '-nodefaultlibs', '-nostartfiles', '-lc++', '-lc++abi', '-lunwind']
 	}
 #	,
 #	'x86': {
@@ -75,7 +75,7 @@ nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
 	'-D_LIBCPP_OBJECT_FORMAT_COFF',
 	'-fshort-wchar',
-	'-fsjlj-exceptions',
+#	'-fsjlj-exceptions',
 	'-Wno-unused-function'
 ]
 

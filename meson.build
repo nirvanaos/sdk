@@ -67,7 +67,7 @@ nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
 	'-D_LIBCPP_OBJECT_FORMAT_COFF',
 	'-fshort-wchar',
-	'-fsjlj-exceptions',
+#	'-fsjlj-exceptions',
 	'-Wno-unused-function'
 ]
 
