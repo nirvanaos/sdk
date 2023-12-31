@@ -6,4 +6,6 @@ bin/
 /build
 /build-*
 /sdk/include/
-/sdk-1.0.tar.xz
+/sdk-*.tar.xz
+/test/subprojects/sdk
+/test/subprojects/packagefiles

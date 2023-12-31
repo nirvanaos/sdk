@@ -35,11 +35,11 @@ sys_inc = include_directories (libc_inc, clang_inc, 'nirvana/library/Include/CRT
 host_platforms = { 'windows':
 	{
 		'x64': {
-			'cpp_args' : ['--target=x86_64-w64-windows-gnu', '-mlzcnt'],
+			'cpp_args' : ['--target=x86_64-w64-windows-gnu', '-mlzcnt', '-fsized-deallocation'],
 			'link_args' : ['--sysroot=' + clang64]
 		},
 		'x86': {
-			'cpp_args' : ['--target=i686-w64-windows-gnu'],
+			'cpp_args' : ['--target=i686-w64-windows-gnu', '-fsized-deallocation'],
 			'link_args' : ['-m32', '--sysroot=' + clang32]
 		}
 	}
@@ -48,16 +48,12 @@ host_platforms = { 'windows':
 all_platforms = {
 	'x64': {
 		'cpp_args' : [
-#			'--target=x86_64-pc-none-eabi', Produces ELF object, need ELF loader
-			'--target=x86_64-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__', '-U__MINGW64__',
-#			'--target=x86_64-pc-none-coff', 
-			'-mlzcnt'],
+			'--target=x86_64-pc-none-elf',
+			'-mlzcnt', '-fsized-deallocation'],
 		'link_args' : ['-nodefaultlibs', '-m64']
 	},
 	'x86': {
-#		'cpp_args' : ['--target=i686-pc-none-eabi'], Produces ELF object, need ELF loader
-		'cpp_args' : ['--target=i686-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__'],
-#		'cpp_args' : ['--target=i686-pc-none-coff'], 
+		'cpp_args' : ['--target=i686-pc-none-elf', '-fsized-deallocation'],
 		'link_args' : ['-m32', '--sysroot=' + clang32]
 	}
 }
@@ -66,9 +62,7 @@ all_platforms = {
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
-	'-D_LIBCPP_OBJECT_FORMAT_COFF',
 	'-fshort-wchar',
-#	'-fsjlj-exceptions',
 	'-Wno-unused-function'
 ]
 

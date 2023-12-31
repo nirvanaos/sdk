@@ -57,14 +57,14 @@ host_platforms = { 'windows':
 all_platforms = {
 	'x64': {
 		'cpp_args' : [
-#			'--target=x86_64-pc-none-eabi',
-			'--target=x86_64-w64-windows-gnu', '-U_WIN32', '-U__MINGW32__', '-U__MINGW64__',
+			'--target=x86_64-pc-none-elf',
 			'-mlzcnt'],
-		'link_args' : [ '-edummy', '-nodefaultlibs', '-nostartfiles', '-lc++', '-lc++abi', '-lunwind']
+		'link_args' : [ '-edummy', '-nodefaultlibs', '-nostartfiles', '-lc++', '-lc++abi', '-lunwind',
+		'-B' + meson.current_source_dir () + build_machine.system () + '/bin' ]
 	}
 #	,
 #	'x86': {
-#		'cpp_args' : ['--target=i686-pc-none-eabi'],
+#		'cpp_args' : ['--target=i686-pc-none-elf'],
 #		'link_args' : ['-m32']
 #	}
 }
@@ -73,14 +73,12 @@ all_platforms = {
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 	'-D_LIBCPP_DISABLE_VISIBILITY_ANNOTATIONS',
 	'-D_LIBCPP_PROVIDES_DEFAULT_RUNE_TABLE',
-	'-D_LIBCPP_OBJECT_FORMAT_COFF',
 	'-fshort-wchar',
-#	'-fsjlj-exceptions',
 	'-Wno-unused-function'
 ]
 
 lib_dir = meson.current_source_dir () + '/' + get_option ('buildtype')
-libraries = ['nirvana', 'imports', 'crtl', 'googletest', 'llvmlibc']
+libraries = ['nirvana', 'imports', 'crtl', 'googletest', 'llvmlibc', 'libc++', 'libc++abi', 'libunwind'],
 
 sdk_deps = {}
 foreach platform, arch : all_platforms
