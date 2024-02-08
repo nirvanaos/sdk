@@ -57,10 +57,10 @@ host_platforms = { 'windows':
 all_platforms = {
 	'x64': {
 		'cpp_args' : [
+			'-B' + meson.current_source_dir () + '/' + build_machine.system () + '/bin',
 			'--target=x86_64-pc-none-elf',
 			'-mlzcnt'],
-		'link_args' : [ '-edummy', '-nodefaultlibs', '-nostartfiles', '-lc++', '-lc++abi', '-lunwind',
-		'-B' + meson.current_source_dir () + build_machine.system () + '/bin' ]
+		'link_args' : [ '-###', '--target=x86_64-pc-none-elf', '-edummy', '-nodefaultlibs', '-nostartfiles' ]
 	}
 #	,
 #	'x86': {
@@ -68,6 +68,9 @@ all_platforms = {
 #		'link_args' : ['-m32']
 #	}
 }
+
+environment().set('CC_LD', meson.current_source_dir () + '/' + build_machine.system () + '/bin/lld')
+environment().set('CXX_LD', meson.current_source_dir () + '/' + build_machine.system () + '/bin/lld')
 
 # C++ options to build Nirvana binaries
 nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
@@ -78,7 +81,7 @@ nirvana_cpp_opts = ['-nostdinc', '-nostdinc++',
 ]
 
 lib_dir = meson.current_source_dir () + '/' + get_option ('buildtype')
-libraries = ['nirvana', 'imports', 'crtl', 'googletest', 'llvmlibc', 'libc++', 'libc++abi', 'libunwind'],
+libraries = ['nirvana', 'imports', 'crtl', 'googletest', 'llvmlibc', 'c++', 'c++abi', 'unwind']
 
 sdk_deps = {}
 foreach platform, arch : all_platforms

@@ -39,13 +39,15 @@ cpp_flags="-fsized-deallocation\
 # -DLIBCXX_HAS_PTHREAD_API=ON                          \
 # Threads are temporary disabled
 
-# -DCMAKE_C_COMPILER_FORCED=ON                         \
-# -DCMAKE_CXX_COMPILER_FORCED=ON                       \
+# -DLIBCXXABI_ADDITIONAL_COMPILE_FLAGS="$cpp_flags"    \
 
 cmake -G Ninja -S "$llvm_root/runtimes" -B $build_dir \
  -DCMAKE_C_COMPILER=clang                             \
  -DCMAKE_CXX_COMPILER=clang++                         \
- -DLLVM_ENABLE_LLD=ON                                 \
+ -DCMAKE_C_COMPILER_FORCED=ON                         \
+ -DCMAKE_CXX_COMPILER_FORCED=ON                       \
+ -DLLVM_ENABLE_LLD=OFF                                \
+ -DLLVM_USE_LINKER="c:/0work/Nirvana/Work/sdk/sdk/windows/bin/ld.lld.exe" \
  -DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind"  \
  -DCMAKE_INSTALL_PREFIX="$dest_dir"                   \
  -DLIBCXX_INSTALL_LIBRARY_DIR="$dest_dir/$config"     \
@@ -59,7 +61,8 @@ cmake -G Ninja -S "$llvm_root/runtimes" -B $build_dir \
  -DLIBUNWIND_ENABLE_SHARED=OFF                        \
  -DLIBUNWIND_HIDE_SYMBOLS=ON                          \
  -DLIBCXX_ENABLE_FILESYSTEM=OFF                       \
- -DLIBCXXABI_ADDITIONAL_COMPILE_FLAGS="$cpp_flags"    \
+ -DCMAKE_CXX_FLAGS="$cpp_flags" \
+ -DCMAKE_C_FLAGS="$cpp_flags" \
  -DLIBCXX_ENABLE_THREADS=OFF                          \
  -DLIBCXXABI_ENABLE_THREADS=OFF                       \
  -DLIBCXX_ENABLE_STATIC_ABI_LIBRARY=ON                \

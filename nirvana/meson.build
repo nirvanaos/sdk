@@ -4,6 +4,7 @@ subdir('library')
 subdir('orb')
 
 cust_targets = []
+hdr_targets = []
 
 foreach f : orb_idl_no_ami
 	name = fs.name (f)
@@ -35,11 +36,12 @@ endforeach
 
 foreach f : orb_idl_hdr_only
 	name = fs.name (f)
-	custom_target (name,
+	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy', '-no_ami',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
+			'-out_cpp', '@OUTDIR@',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
 	)
@@ -61,11 +63,12 @@ endforeach
 
 foreach f : lib_idl_hdr_only
 	name = fs.name (f)
-	custom_target (name,
+	cust_targets += custom_target (name,
 		input : f,
 		command : [nidl2cpp, '-no_proxy', '-no_ami',
 			'-I', '@CURRENT_SOURCE_DIR@/orb/Include',
 			'-I', '@CURRENT_SOURCE_DIR@/library/Include',
+			'-out_cpp', '@OUTDIR@',
 			'@INPUT@'],
 		output : fs.replace_suffix (name, '.cpp')
 	)
@@ -108,6 +111,7 @@ foreach platform, arch : host_platforms [target_machine.system ()]
 	mock = static_library ('mock-' + platform + '-' + target_machine.system (),
 		lib_mock,
 		orb_mock,
+		cust_targets,
 		include_directories : inc_dirs,
 		cpp_args : cpp_args,
 		install: true,
